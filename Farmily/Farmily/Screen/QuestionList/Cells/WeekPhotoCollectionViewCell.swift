@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WeekPhotoCollectionViewCell: UICollectionViewCell {
+final class WeekPhotoCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

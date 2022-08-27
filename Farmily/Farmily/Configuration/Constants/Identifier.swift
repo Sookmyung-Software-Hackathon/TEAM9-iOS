@@ -12,7 +12,8 @@ extension Const {
     struct Identifier {
         
         static let RecordListTableViewCell = "RecordListTableViewCell"
-        
+        static let WeekPhotoCollectionViewCell = "WeekPhotoCollectionViewCell"
+        static let WeekQuestionCollectionViewCell = "WeekQuestionCollectionViewCell"
     }
 }
 

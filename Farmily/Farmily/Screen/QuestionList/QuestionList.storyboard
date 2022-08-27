@@ -44,15 +44,33 @@
                                     <constraint firstAttribute="height" constant="44" id="xiE-mh-EQq"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="86j-PE-8j4">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="q3A-j3-XJs">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="86j-PE-8j4" firstAttribute="top" secondItem="9G5-HJ-FZ0" secondAttribute="bottom" id="Kq1-gk-3gG"/>
+                            <constraint firstItem="86j-PE-8j4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="VWi-st-50a"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9G5-HJ-FZ0" secondAttribute="trailing" id="gr6-MV-niu"/>
+                            <constraint firstAttribute="bottom" secondItem="86j-PE-8j4" secondAttribute="bottom" id="l8y-VO-xCn"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="86j-PE-8j4" secondAttribute="trailing" id="oT2-rm-GPI"/>
                             <constraint firstItem="9G5-HJ-FZ0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="olb-vS-GBS"/>
                             <constraint firstItem="9G5-HJ-FZ0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pG8-dd-bpu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="86j-PE-8j4" id="Ehg-Nd-pRT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

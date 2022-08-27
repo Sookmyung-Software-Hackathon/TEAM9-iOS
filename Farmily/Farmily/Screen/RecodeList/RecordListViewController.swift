@@ -37,7 +37,28 @@ final class RecordListViewController: UIViewController {
     }
 }
 
+// MARK: - Extension (화면전환)
+
+extension RecordListViewController {
+    
+    private func goToQuestionListViewController() {
+        guard let questionListViewController = UIStoryboard(name: Const.Storyboard.QuestionList, bundle: nil)
+            .instantiateViewController(withIdentifier: Const.ViewController.QuestionListViewController) as? QuestionListViewController else { return }
+        self.navigationController?.pushViewController(questionListViewController, animated: true)
+    }
+    
+}
+
 extension RecordListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 1:
+            goToQuestionListViewController()
+        default:
+            print("zz")
+        }
+    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return RecordHeaderView()
