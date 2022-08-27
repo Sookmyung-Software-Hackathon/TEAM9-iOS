@@ -9,7 +9,6 @@ import UIKit
 
 class InitialViewController: UIViewController {
 
-    @IBOutlet weak var showAlertButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +18,9 @@ class InitialViewController: UIViewController {
     
     
 
-    @IBAction func showAlertButtonDIdTap(_ sender: Any) {
-        makeTextFieldOKAlert()
-    }
+//    @IBAction func showAlertButtonDIdTap(_ sender: Any) {
+//        makeTextFieldOKAlert()
+//    }
 }
 
 extension InitialViewController {
