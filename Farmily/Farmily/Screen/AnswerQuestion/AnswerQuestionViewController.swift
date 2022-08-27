@@ -39,6 +39,9 @@ class AnswerQuestionViewController: UIViewController {
 		answerTextView.backgroundColor = .clear
 		answerTextView.delegate = self
 	}
+	@IBAction func pressToGoBack(_ sender: Any) {
+		self.dismiss(animated: true)
+	}
 	
 	@objc private func didTapTextView(_ sender: Any) {
 		view.endEditing(true)

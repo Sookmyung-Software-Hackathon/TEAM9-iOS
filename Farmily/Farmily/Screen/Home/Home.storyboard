@@ -41,16 +41,28 @@
                                 <color key="textColor" red="0.22352941179999999" green="0.2901960784" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P70-hC-7ev">
+                                <rect key="frame" x="14" y="171" width="347" height="205"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="pressToGoAnswerQuestionView:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BDM-Mm-fV6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="InitialBackground"/>
+                        <color key="tintColor" name="InitialBackground"/>
                         <constraints>
                             <constraint firstItem="lIS-S2-deK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="88" id="07G-dB-epN"/>
+                            <constraint firstItem="P70-hC-7ev" firstAttribute="leading" secondItem="3NN-15-1er" secondAttribute="leading" id="FF6-6Y-qZt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4ur-hL-cxC" secondAttribute="trailing" constant="56" id="MPU-JO-fU4"/>
                             <constraint firstItem="3NN-15-1er" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="14" id="PpJ-mC-2k8"/>
                             <constraint firstAttribute="trailing" secondItem="3NN-15-1er" secondAttribute="trailing" constant="14" id="XT6-eZ-2pb"/>
                             <constraint firstItem="lIS-S2-deK" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="28" id="XkS-mN-x6L"/>
+                            <constraint firstItem="P70-hC-7ev" firstAttribute="trailing" secondItem="3NN-15-1er" secondAttribute="trailing" id="Zl5-Ga-jCY"/>
+                            <constraint firstItem="P70-hC-7ev" firstAttribute="top" secondItem="3NN-15-1er" secondAttribute="top" id="dq4-9h-AEB"/>
                             <constraint firstItem="4ur-hL-cxC" firstAttribute="firstBaseline" secondItem="3NN-15-1er" secondAttribute="firstBaseline" constant="42" id="epC-KH-UyM"/>
+                            <constraint firstItem="P70-hC-7ev" firstAttribute="bottom" secondItem="3NN-15-1er" secondAttribute="bottom" id="g2d-Wg-uHM"/>
                             <constraint firstItem="nq0-FN-73z" firstAttribute="top" secondItem="3NN-15-1er" secondAttribute="bottom" constant="6" id="jCI-P2-bpM"/>
                             <constraint firstItem="3NN-15-1er" firstAttribute="top" secondItem="lIS-S2-deK" secondAttribute="bottom" constant="46" id="jHk-tH-5pg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lIS-S2-deK" secondAttribute="trailing" constant="89" id="kPn-KC-wzM"/>
@@ -66,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23" y="131"/>
+            <point key="canvasLocation" x="-23.199999999999999" y="130.78817733990149"/>
         </scene>
     </scenes>
     <resources>
