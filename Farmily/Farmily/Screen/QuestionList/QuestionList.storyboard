@@ -15,8 +15,43 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9G5-HJ-FZ0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oR8-cw-f59">
+                                        <rect key="frame" x="8" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="9VD-Wj-f6g"/>
+                                            <constraint firstAttribute="height" constant="44" id="Pwl-I9-WH4"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="icBack"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27주차 울타리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hA-ld-rJn">
+                                        <rect key="frame" x="164" y="13" width="86.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="oR8-cw-f59" firstAttribute="centerY" secondItem="9G5-HJ-FZ0" secondAttribute="centerY" id="04c-lu-xZm"/>
+                                    <constraint firstItem="oR8-cw-f59" firstAttribute="leading" secondItem="9G5-HJ-FZ0" secondAttribute="leading" constant="8" id="1wA-JI-3nB"/>
+                                    <constraint firstItem="3hA-ld-rJn" firstAttribute="centerY" secondItem="9G5-HJ-FZ0" secondAttribute="centerY" id="DFt-Pd-mpC"/>
+                                    <constraint firstItem="3hA-ld-rJn" firstAttribute="centerX" secondItem="9G5-HJ-FZ0" secondAttribute="centerX" id="JxI-J5-1Xe"/>
+                                    <constraint firstAttribute="height" constant="44" id="xiE-mh-EQq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9G5-HJ-FZ0" secondAttribute="trailing" id="gr6-MV-niu"/>
+                            <constraint firstItem="9G5-HJ-FZ0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="olb-vS-GBS"/>
+                            <constraint firstItem="9G5-HJ-FZ0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pG8-dd-bpu"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -25,6 +60,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icBack" width="44" height="44"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
