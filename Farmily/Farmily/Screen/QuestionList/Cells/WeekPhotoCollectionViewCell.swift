@@ -11,7 +11,6 @@ final class WeekPhotoCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
 }
