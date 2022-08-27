@@ -56,6 +56,8 @@
 		152F57F328BA653B00CA3245 /* WeekQuestionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 152F57F128BA653B00CA3245 /* WeekQuestionCollectionViewCell.xib */; };
 		152F57F628BA6CF800CA3245 /* QuestionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57F528BA6CF800CA3245 /* QuestionHeaderCollectionReusableView.swift */; };
 		8580EAC81110D1650A787330 /* Pods_Farmily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7325699031C30C791E1365AA /* Pods_Farmily.framework */; };
+		F21F606828BA88D600E73B3E /* AnswerQuestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21F606728BA88D600E73B3E /* AnswerQuestion.storyboard */; };
+		F21F606A28BA88E600E73B3E /* AnswerQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21F606928BA88E600E73B3E /* AnswerQuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +114,8 @@
 		152F57F528BA6CF800CA3245 /* QuestionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		66742D996FC244F628203A2A /* Pods-Farmily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmily.debug.xcconfig"; path = "Target Support Files/Pods-Farmily/Pods-Farmily.debug.xcconfig"; sourceTree = "<group>"; };
 		7325699031C30C791E1365AA /* Pods_Farmily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F21F606728BA88D600E73B3E /* AnswerQuestion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnswerQuestion.storyboard; sourceTree = "<group>"; };
+		F21F606928BA88E600E73B3E /* AnswerQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerQuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,7 @@
 				152F57B128B9FE4E00CA3245 /* MyPage */,
 				152F57AC28B9FDE300CA3245 /* RecodeList */,
 				152F57A728B9FDB700CA3245 /* Home */,
+				F21F606628BA88BE00E73B3E /* AnswerQuestion */,
 				152F577A28B9F43100CA3245 /* Main.storyboard */,
 				152F57A528B9FD7700CA3245 /* MainTabBarController.swift */,
 			);
@@ -401,6 +406,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F21F606628BA88BE00E73B3E /* AnswerQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				F21F606728BA88D600E73B3E /* AnswerQuestion.storyboard */,
+				F21F606928BA88E600E73B3E /* AnswerQuestionViewController.swift */,
+			);
+			path = AnswerQuestion;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -469,6 +483,7 @@
 				152F577E28B9F43400CA3245 /* Assets.xcassets in Resources */,
 				152F57C228BA000900CA3245 /* QuestionDetail.storyboard in Resources */,
 				152F57E028BA4AE700CA3245 /* Colors.xcassets in Resources */,
+				F21F606828BA88D600E73B3E /* AnswerQuestion.storyboard in Resources */,
 				152F57B828B9FF4E00CA3245 /* Initial.storyboard in Resources */,
 				152F577C28B9F43100CA3245 /* Main.storyboard in Resources */,
 				152F57EF28BA652500CA3245 /* WeekPhotoCollectionViewCell.xib in Resources */,
@@ -530,6 +545,7 @@
 				152F57C728BA003300CA3245 /* Const.swift in Sources */,
 				152F57F228BA653B00CA3245 /* WeekQuestionCollectionViewCell.swift in Sources */,
 				152F57CF28BA010600CA3245 /* Image.swift in Sources */,
+				F21F606A28BA88E600E73B3E /* AnswerQuestionViewController.swift in Sources */,
 				152F57D328BA3EA200CA3245 /* URLConstant.swift in Sources */,
 				152F57E428BA510000CA3245 /* RecordListTableViewCell.swift in Sources */,
 				152F57B028B9FE3E00CA3245 /* RecordListViewController.swift in Sources */,
