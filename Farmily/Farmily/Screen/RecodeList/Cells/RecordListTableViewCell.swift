@@ -20,7 +20,7 @@ final class RecordListTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 6.0, left: 16, bottom: 6, right: 16))
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 12.0, left: 16, bottom: 0, right: 16))
     }
     
     private func setUI() {
