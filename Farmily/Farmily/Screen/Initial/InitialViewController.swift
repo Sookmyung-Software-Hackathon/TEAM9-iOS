@@ -9,11 +9,19 @@ import UIKit
 
 class InitialViewController: UIViewController {
 
+    @IBOutlet weak var newFarmilyButton: UIButton!
+    @IBOutlet weak var joinFarmilyButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUI()
+    }
+    
+    private func setUI() {
+        [newFarmilyButton, joinFarmilyButton].forEach({ button in
+            button?.cornerRadius = 25
+        })
     }
     
     

@@ -3,8 +3,8 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,18 +15,114 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="TNd-Vy-UJx">
+                                <rect key="frame" x="69.5" y="165.5" width="275" height="565"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgStringLogo" translatesAutoresizingMaskIntoConstraints="NO" id="qSf-OM-2Uw">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="rPi-R9-Nna"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="6EW-1y-Tdb">
+                                        <rect key="frame" x="0.0" y="164" width="275" height="401"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgLogo" translatesAutoresizingMaskIntoConstraints="NO" id="8KB-pv-Vff">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="184"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="bottom" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="Kvc-02-qCC">
+                                                <rect key="frame" x="0.0" y="217" width="275" height="184"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdn-Vd-TMn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="41"/>
+                                                        <string key="text">파밀리가 만든 
+가족 농장에 참가해봐요!</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.0" alpha="0.50835229400405313" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SIv-5v-Rn1">
+                                                        <rect key="frame" x="0.0" y="80" width="275" height="104"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBe-Sy-8gk">
+                                                                <rect key="frame" x="0.0" y="0.0" width="275" height="48"/>
+                                                                <color key="backgroundColor" name="InitialGreen"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="275" id="dXR-24-EOw"/>
+                                                                    <constraint firstAttribute="height" constant="48" id="zMN-7B-qD1"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="새로운 파밀리 생성하기">
+                                                                    <color key="titleColor" name="InitialBackground"/>
+                                                                </state>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbR-Bm-QhI">
+                                                                <rect key="frame" x="0.0" y="56" width="275" height="48"/>
+                                                                <color key="backgroundColor" name="InitialBlue"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="48" id="mWg-fQ-Niq"/>
+                                                                    <constraint firstAttribute="width" constant="275" id="rma-Cx-L5o"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="기존 파밀리로 참여하기">
+                                                                    <color key="titleColor" name="InitialBackground"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="vdn-Vd-TMn" firstAttribute="leading" secondItem="Kvc-02-qCC" secondAttribute="leading" id="eJ3-xz-uc4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vdn-Vd-TMn" secondAttribute="trailing" id="gRk-8I-z2k"/>
+                                                    <constraint firstItem="vdn-Vd-TMn" firstAttribute="top" secondItem="Kvc-02-qCC" secondAttribute="top" id="oeT-vU-P11"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="8KB-pv-Vff" secondAttribute="trailing" id="aea-Ld-3Za"/>
+                                            <constraint firstItem="8KB-pv-Vff" firstAttribute="leading" secondItem="6EW-1y-Tdb" secondAttribute="leading" id="b1Q-sl-Sy4"/>
+                                            <constraint firstItem="8KB-pv-Vff" firstAttribute="top" secondItem="6EW-1y-Tdb" secondAttribute="top" id="olo-YW-cms"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qSf-OM-2Uw" firstAttribute="top" secondItem="TNd-Vy-UJx" secondAttribute="top" id="EKT-4Z-kgZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="qSf-OM-2Uw" secondAttribute="trailing" id="dto-7r-VDB"/>
+                                    <constraint firstItem="qSf-OM-2Uw" firstAttribute="leading" secondItem="TNd-Vy-UJx" secondAttribute="leading" id="i3Z-zd-j6p"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="InitialBackground"/>
+                        <constraints>
+                            <constraint firstItem="TNd-Vy-UJx" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Li0-hM-wQX"/>
+                            <constraint firstItem="TNd-Vy-UJx" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="eoR-kR-qPk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="joinFarmilyButton" destination="mbR-Bm-QhI" id="AEj-ce-XJ6"/>
+                        <outlet property="newFarmilyButton" destination="qBe-Sy-8gk" id="pHa-Jj-FTp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="35"/>
+            <point key="canvasLocation" x="24.637681159420293" y="34.821428571428569"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="imgLogo" width="184" height="184"/>
+        <image name="imgStringLogo" width="198" height="97"/>
+        <namedColor name="InitialBackground">
+            <color red="1" green="0.9882352941176471" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="InitialBlue">
+            <color red="0.52941176470588236" green="0.55294117647058827" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="InitialGreen">
+            <color red="0.56862745098039214" green="0.67843137254901964" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
