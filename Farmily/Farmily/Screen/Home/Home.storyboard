@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--홈-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="Farmily" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,7 +70,7 @@
                             <constraint firstItem="4ur-hL-cxC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="63" id="tEY-iC-aKa"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="cbp-Q3-LnT"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="tabBarIconHome" id="cbp-Q3-LnT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="questionLabel" destination="4ur-hL-cxC" id="aod-Se-JTq"/>
@@ -85,6 +85,7 @@
         <image name="imgBubble" width="347" height="205"/>
         <image name="imgFarm" width="295" height="263"/>
         <image name="imgStringLogo" width="198" height="97"/>
+        <image name="tabBarIconHome" width="25" height="24"/>
         <namedColor name="InitialBackground">
             <color red="1" green="0.9882352941176471" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
