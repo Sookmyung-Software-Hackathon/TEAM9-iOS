@@ -8,12 +8,12 @@
 import UIKit
 
 final class QuestionListViewController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setCollectionView()
     }
 }
@@ -31,6 +31,8 @@ extension QuestionListViewController {
     private func registerXib() {
         collectionView.register(UINib(nibName: Const.Identifier.WeekQuestionCollectionViewCell, bundle: nil),
                                 forCellWithReuseIdentifier: Const.Identifier.WeekQuestionCollectionViewCell)
+        collectionView.register(QuestionHeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: Const.Identifier.QuestionHeaderCollectionReusableView)
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -70,9 +72,16 @@ extension QuestionListViewController {
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalWidth(0.5))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-  //      group.interItemSpacing = .flexible(8)
+        //      group.interItemSpacing = .flexible(8)
         let section = NSCollectionLayoutSection(group: group)
-    //    section.interGroupSpacing = 8
+        section.interGroupSpacing = 8
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(44)
+        )
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        section.boundarySupplementaryItems = [header]
+       
         return section
         
     }
@@ -103,5 +112,14 @@ extension QuestionListViewController: UICollectionViewDataSource {
         }
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch indexPath.section {
+        case 1:
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Const.Identifier.QuestionHeaderCollectionReusableView, for: indexPath)
+            return view
+        default:
+            return UICollectionReusableView()
+        }
+        
+    }
 }
