@@ -38,7 +38,4 @@ final class QuestionHeaderCollectionReusableView: UICollectionReusableView {
             $0.leading.equalToSuperview().inset(8)
         }
     }
-    
-    
-    
 }
