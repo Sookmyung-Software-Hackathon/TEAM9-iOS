@@ -57,6 +57,9 @@
                                                                 <state key="normal" title="새로운 파밀리 생성하기">
                                                                     <color key="titleColor" name="InitialBackground"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="newFarmilyButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qig-lh-8DJ"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbR-Bm-QhI">
                                                                 <rect key="frame" x="0.0" y="56" width="275" height="48"/>
@@ -70,6 +73,9 @@
                                                                 <state key="normal" title="기존 파밀리로 참여하기">
                                                                     <color key="titleColor" name="InitialBackground"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="joinFarmilyButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7yv-DE-4ZL"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
