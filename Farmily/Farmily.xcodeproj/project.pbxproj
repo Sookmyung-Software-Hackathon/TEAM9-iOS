@@ -50,6 +50,10 @@
 		152F57E528BA510000CA3245 /* RecordListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 152F57E328BA510000CA3245 /* RecordListTableViewCell.xib */; };
 		152F57E728BA5AA300CA3245 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57E628BA5AA300CA3245 /* EmptyTableViewCell.swift */; };
 		152F57EA28BA619500CA3245 /* RecordHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57E928BA619500CA3245 /* RecordHeaderView.swift */; };
+		152F57EE28BA652500CA3245 /* WeekPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57EC28BA652500CA3245 /* WeekPhotoCollectionViewCell.swift */; };
+		152F57EF28BA652500CA3245 /* WeekPhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 152F57ED28BA652500CA3245 /* WeekPhotoCollectionViewCell.xib */; };
+		152F57F228BA653B00CA3245 /* WeekQuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57F028BA653B00CA3245 /* WeekQuestionCollectionViewCell.swift */; };
+		152F57F328BA653B00CA3245 /* WeekQuestionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 152F57F128BA653B00CA3245 /* WeekQuestionCollectionViewCell.xib */; };
 		8580EAC81110D1650A787330 /* Pods_Farmily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7325699031C30C791E1365AA /* Pods_Farmily.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +104,10 @@
 		152F57E328BA510000CA3245 /* RecordListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordListTableViewCell.xib; sourceTree = "<group>"; };
 		152F57E628BA5AA300CA3245 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		152F57E928BA619500CA3245 /* RecordHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHeaderView.swift; sourceTree = "<group>"; };
+		152F57EC28BA652500CA3245 /* WeekPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		152F57ED28BA652500CA3245 /* WeekPhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekPhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		152F57F028BA653B00CA3245 /* WeekQuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekQuestionCollectionViewCell.swift; sourceTree = "<group>"; };
+		152F57F128BA653B00CA3245 /* WeekQuestionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekQuestionCollectionViewCell.xib; sourceTree = "<group>"; };
 		66742D996FC244F628203A2A /* Pods-Farmily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmily.debug.xcconfig"; path = "Target Support Files/Pods-Farmily/Pods-Farmily.debug.xcconfig"; sourceTree = "<group>"; };
 		7325699031C30C791E1365AA /* Pods_Farmily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -292,6 +300,7 @@
 		152F57BB28B9FFD100CA3245 /* QuestionList */ = {
 			isa = PBXGroup;
 			children = (
+				152F57EB28BA650500CA3245 /* Cells */,
 				152F57BC28B9FFE700CA3245 /* QuestionList.storyboard */,
 				152F57BE28B9FFF200CA3245 /* QuestionListViewController.swift */,
 			);
@@ -360,6 +369,17 @@
 				152F57E928BA619500CA3245 /* RecordHeaderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		152F57EB28BA650500CA3245 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				152F57EC28BA652500CA3245 /* WeekPhotoCollectionViewCell.swift */,
+				152F57ED28BA652500CA3245 /* WeekPhotoCollectionViewCell.xib */,
+				152F57F028BA653B00CA3245 /* WeekQuestionCollectionViewCell.swift */,
+				152F57F128BA653B00CA3245 /* WeekQuestionCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		ED32BE85D96D4ABF548659D6 /* Frameworks */ = {
@@ -433,12 +453,14 @@
 				152F578128B9F43400CA3245 /* LaunchScreen.storyboard in Resources */,
 				152F57B328B9FE5400CA3245 /* MyPage.storyboard in Resources */,
 				152F57BD28B9FFE700CA3245 /* QuestionList.storyboard in Resources */,
+				152F57F328BA653B00CA3245 /* WeekQuestionCollectionViewCell.xib in Resources */,
 				152F57E528BA510000CA3245 /* RecordListTableViewCell.xib in Resources */,
 				152F577E28B9F43400CA3245 /* Assets.xcassets in Resources */,
 				152F57C228BA000900CA3245 /* QuestionDetail.storyboard in Resources */,
 				152F57E028BA4AE700CA3245 /* Colors.xcassets in Resources */,
 				152F57B828B9FF4E00CA3245 /* Initial.storyboard in Resources */,
 				152F577C28B9F43100CA3245 /* Main.storyboard in Resources */,
+				152F57EF28BA652500CA3245 /* WeekPhotoCollectionViewCell.xib in Resources */,
 				152F57AE28B9FE3600CA3245 /* RecodeList.storyboard in Resources */,
 				152F57A928B9FDC500CA3245 /* Home.storyboard in Resources */,
 			);
@@ -495,6 +517,7 @@
 			files = (
 				152F579C28B9FB7800CA3245 /* StatusHandler.swift in Sources */,
 				152F57C728BA003300CA3245 /* Const.swift in Sources */,
+				152F57F228BA653B00CA3245 /* WeekQuestionCollectionViewCell.swift in Sources */,
 				152F57CF28BA010600CA3245 /* Image.swift in Sources */,
 				152F57D328BA3EA200CA3245 /* URLConstant.swift in Sources */,
 				152F57E428BA510000CA3245 /* RecordListTableViewCell.swift in Sources */,
@@ -506,6 +529,7 @@
 				152F57A628B9FD7700CA3245 /* MainTabBarController.swift in Sources */,
 				152F579728B9FA4200CA3245 /* UIView+.swift in Sources */,
 				152F57A228B9FBB200CA3245 /* BaseResponseType.swift in Sources */,
+				152F57EE28BA652500CA3245 /* WeekPhotoCollectionViewCell.swift in Sources */,
 				152F579228B9F82C00CA3245 /* MoyaLoggingPlugin.swift in Sources */,
 				152F57DC28BA41C800CA3245 /* FamilyRouter.swift in Sources */,
 				152F57D128BA023700CA3245 /* BaseTargetType.swift in Sources */,
