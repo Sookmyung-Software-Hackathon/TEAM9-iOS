@@ -28,6 +28,12 @@
 		152F57B028B9FE3E00CA3245 /* RecordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57AF28B9FE3E00CA3245 /* RecordListViewController.swift */; };
 		152F57B328B9FE5400CA3245 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F57B228B9FE5400CA3245 /* MyPage.storyboard */; };
 		152F57B528B9FE5A00CA3245 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57B428B9FE5A00CA3245 /* MyPageViewController.swift */; };
+		152F57B828B9FF4E00CA3245 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F57B728B9FF4E00CA3245 /* Initial.storyboard */; };
+		152F57BA28B9FF5600CA3245 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57B928B9FF5600CA3245 /* InitialViewController.swift */; };
+		152F57BD28B9FFE700CA3245 /* QuestionList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F57BC28B9FFE700CA3245 /* QuestionList.storyboard */; };
+		152F57BF28B9FFF200CA3245 /* QuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57BE28B9FFF200CA3245 /* QuestionListViewController.swift */; };
+		152F57C228BA000900CA3245 /* QuestionDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152F57C128BA000900CA3245 /* QuestionDetail.storyboard */; };
+		152F57C428BA001000CA3245 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57C328BA001000CA3245 /* QuestionDetailViewController.swift */; };
 		8580EAC81110D1650A787330 /* Pods_Farmily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7325699031C30C791E1365AA /* Pods_Farmily.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +62,12 @@
 		152F57AF28B9FE3E00CA3245 /* RecordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListViewController.swift; sourceTree = "<group>"; };
 		152F57B228B9FE5400CA3245 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		152F57B428B9FE5A00CA3245 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		152F57B728B9FF4E00CA3245 /* Initial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
+		152F57B928B9FF5600CA3245 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		152F57BC28B9FFE700CA3245 /* QuestionList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionList.storyboard; sourceTree = "<group>"; };
+		152F57BE28B9FFF200CA3245 /* QuestionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListViewController.swift; sourceTree = "<group>"; };
+		152F57C128BA000900CA3245 /* QuestionDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuestionDetail.storyboard; sourceTree = "<group>"; };
+		152F57C328BA001000CA3245 /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailViewController.swift; sourceTree = "<group>"; };
 		66742D996FC244F628203A2A /* Pods-Farmily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmily.debug.xcconfig"; path = "Target Support Files/Pods-Farmily/Pods-Farmily.debug.xcconfig"; sourceTree = "<group>"; };
 		7325699031C30C791E1365AA /* Pods_Farmily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,6 +162,9 @@
 		152F578E28B9F64D00CA3245 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				152F57C028BA000000CA3245 /* QuestionDetail */,
+				152F57BB28B9FFD100CA3245 /* QuestionList */,
+				152F57B628B9FF4800CA3245 /* Initial */,
 				152F57B128B9FE4E00CA3245 /* MyPage */,
 				152F57AC28B9FDE300CA3245 /* RecodeList */,
 				152F57A728B9FDB700CA3245 /* Home */,
@@ -224,6 +239,33 @@
 			path = MyPage;
 			sourceTree = "<group>";
 		};
+		152F57B628B9FF4800CA3245 /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				152F57B728B9FF4E00CA3245 /* Initial.storyboard */,
+				152F57B928B9FF5600CA3245 /* InitialViewController.swift */,
+			);
+			path = Initial;
+			sourceTree = "<group>";
+		};
+		152F57BB28B9FFD100CA3245 /* QuestionList */ = {
+			isa = PBXGroup;
+			children = (
+				152F57BC28B9FFE700CA3245 /* QuestionList.storyboard */,
+				152F57BE28B9FFF200CA3245 /* QuestionListViewController.swift */,
+			);
+			path = QuestionList;
+			sourceTree = "<group>";
+		};
+		152F57C028BA000000CA3245 /* QuestionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				152F57C128BA000900CA3245 /* QuestionDetail.storyboard */,
+				152F57C328BA001000CA3245 /* QuestionDetailViewController.swift */,
+			);
+			path = QuestionDetail;
+			sourceTree = "<group>";
+		};
 		ED32BE85D96D4ABF548659D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,7 +336,10 @@
 			files = (
 				152F578128B9F43400CA3245 /* LaunchScreen.storyboard in Resources */,
 				152F57B328B9FE5400CA3245 /* MyPage.storyboard in Resources */,
+				152F57BD28B9FFE700CA3245 /* QuestionList.storyboard in Resources */,
 				152F577E28B9F43400CA3245 /* Assets.xcassets in Resources */,
+				152F57C228BA000900CA3245 /* QuestionDetail.storyboard in Resources */,
+				152F57B828B9FF4E00CA3245 /* Initial.storyboard in Resources */,
 				152F577C28B9F43100CA3245 /* Main.storyboard in Resources */,
 				152F57AE28B9FE3600CA3245 /* RecodeList.storyboard in Resources */,
 				152F57A928B9FDC500CA3245 /* Home.storyboard in Resources */,
@@ -353,6 +398,7 @@
 				152F579C28B9FB7800CA3245 /* StatusHandler.swift in Sources */,
 				152F57B028B9FE3E00CA3245 /* RecordListViewController.swift in Sources */,
 				152F57A028B9FBA200CA3245 /* StatusCase.swift in Sources */,
+				152F57C428BA001000CA3245 /* QuestionDetailViewController.swift in Sources */,
 				152F57A628B9FD7700CA3245 /* MainTabBarController.swift in Sources */,
 				152F579728B9FA4200CA3245 /* UIView+.swift in Sources */,
 				152F57A228B9FBB200CA3245 /* BaseResponseType.swift in Sources */,
@@ -365,6 +411,8 @@
 				152F577728B9F43100CA3245 /* SceneDelegate.swift in Sources */,
 				152F57AB28B9FDD200CA3245 /* HomeViewController.swift in Sources */,
 				152F579E28B9FB8F00CA3245 /* VoidType.swift in Sources */,
+				152F57BA28B9FF5600CA3245 /* InitialViewController.swift in Sources */,
+				152F57BF28B9FFF200CA3245 /* QuestionListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
