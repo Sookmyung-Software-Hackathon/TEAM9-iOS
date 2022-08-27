@@ -49,6 +49,7 @@
 		152F57E428BA510000CA3245 /* RecordListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57E228BA510000CA3245 /* RecordListTableViewCell.swift */; };
 		152F57E528BA510000CA3245 /* RecordListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 152F57E328BA510000CA3245 /* RecordListTableViewCell.xib */; };
 		152F57E728BA5AA300CA3245 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57E628BA5AA300CA3245 /* EmptyTableViewCell.swift */; };
+		152F57EA28BA619500CA3245 /* RecordHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57E928BA619500CA3245 /* RecordHeaderView.swift */; };
 		8580EAC81110D1650A787330 /* Pods_Farmily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7325699031C30C791E1365AA /* Pods_Farmily.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		152F57E228BA510000CA3245 /* RecordListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListTableViewCell.swift; sourceTree = "<group>"; };
 		152F57E328BA510000CA3245 /* RecordListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordListTableViewCell.xib; sourceTree = "<group>"; };
 		152F57E628BA5AA300CA3245 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		152F57E928BA619500CA3245 /* RecordHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHeaderView.swift; sourceTree = "<group>"; };
 		66742D996FC244F628203A2A /* Pods-Farmily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmily.debug.xcconfig"; path = "Target Support Files/Pods-Farmily/Pods-Farmily.debug.xcconfig"; sourceTree = "<group>"; };
 		7325699031C30C791E1365AA /* Pods_Farmily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -261,6 +263,7 @@
 		152F57AC28B9FDE300CA3245 /* RecodeList */ = {
 			isa = PBXGroup;
 			children = (
+				152F57E828BA618A00CA3245 /* Views */,
 				152F57E128BA50E000CA3245 /* Cells */,
 				152F57AD28B9FE3600CA3245 /* RecodeList.storyboard */,
 				152F57AF28B9FE3E00CA3245 /* RecordListViewController.swift */,
@@ -349,6 +352,14 @@
 				152F57E628BA5AA300CA3245 /* EmptyTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		152F57E828BA618A00CA3245 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				152F57E928BA619500CA3245 /* RecordHeaderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		ED32BE85D96D4ABF548659D6 /* Frameworks */ = {
@@ -502,6 +513,7 @@
 				152F577528B9F43100CA3245 /* AppDelegate.swift in Sources */,
 				152F579528B9F87300CA3245 /* UIImageView+.swift in Sources */,
 				152F57B528B9FE5A00CA3245 /* MyPageViewController.swift in Sources */,
+				152F57EA28BA619500CA3245 /* RecordHeaderView.swift in Sources */,
 				152F57D728BA3FD000CA3245 /* UIColor+.swift in Sources */,
 				152F57A428B9FBC800CA3245 /* BaseArrayResponseType.swift in Sources */,
 				152F577728B9F43100CA3245 /* SceneDelegate.swift in Sources */,
