@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,10 +13,44 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="Farmily" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgStringLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lIS-S2-deK">
+                                <rect key="frame" x="88" y="28" width="198" height="97"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgBubble" translatesAutoresizingMaskIntoConstraints="NO" id="3NN-15-1er">
+                                <rect key="frame" x="14" y="171" width="347" height="205"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgFarm" translatesAutoresizingMaskIntoConstraints="NO" id="nq0-FN-73z">
+                                <rect key="frame" x="0.0" y="382" width="295" height="263"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번주 어쩌구" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ur-hL-cxC">
+                                <rect key="frame" x="63" y="196" width="256" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="19L-Eq-cuJ"/>
+                                    <constraint firstAttribute="width" constant="256" id="L99-AQ-fwD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <color key="textColor" red="0.22352941179999999" green="0.2901960784" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="InitialBackground"/>
+                        <constraints>
+                            <constraint firstItem="lIS-S2-deK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="88" id="07G-dB-epN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4ur-hL-cxC" secondAttribute="trailing" constant="56" id="MPU-JO-fU4"/>
+                            <constraint firstItem="3NN-15-1er" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="14" id="PpJ-mC-2k8"/>
+                            <constraint firstAttribute="trailing" secondItem="3NN-15-1er" secondAttribute="trailing" constant="14" id="XT6-eZ-2pb"/>
+                            <constraint firstItem="lIS-S2-deK" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="28" id="XkS-mN-x6L"/>
+                            <constraint firstItem="4ur-hL-cxC" firstAttribute="firstBaseline" secondItem="3NN-15-1er" secondAttribute="firstBaseline" constant="42" id="epC-KH-UyM"/>
+                            <constraint firstItem="nq0-FN-73z" firstAttribute="top" secondItem="3NN-15-1er" secondAttribute="bottom" constant="6" id="jCI-P2-bpM"/>
+                            <constraint firstItem="3NN-15-1er" firstAttribute="top" secondItem="lIS-S2-deK" secondAttribute="bottom" constant="46" id="jHk-tH-5pg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lIS-S2-deK" secondAttribute="trailing" constant="89" id="kPn-KC-wzM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nq0-FN-73z" secondAttribute="trailing" constant="80" id="tB2-bR-0zt"/>
+                            <constraint firstItem="4ur-hL-cxC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="63" id="tEY-iC-aKa"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="cbp-Q3-LnT"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -27,8 +61,11 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="imgBubble" width="347" height="205"/>
+        <image name="imgFarm" width="295" height="263"/>
+        <image name="imgStringLogo" width="198" height="97"/>
+        <namedColor name="InitialBackground">
+            <color red="1" green="0.9882352941176471" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
