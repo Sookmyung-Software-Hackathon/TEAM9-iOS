@@ -11,6 +11,8 @@ extension Const {
     
     struct Identifier {
         
+        static let RecordListTableViewCell = "RecordListTableViewCell"
+        
     }
 }
 

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordListTableViewCell" rowHeight="118" id="KGk-i7-Jjw" customClass="RecordListTableViewCell" customModule="Farmily" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27번째 울타리 &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJg-yD-SSz">
+                        <rect key="frame" x="24" y="48.5" width="272" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgFenceInRecordList" translatesAutoresizingMaskIntoConstraints="NO" id="ube-Tp-lOx">
+                        <rect key="frame" x="191" y="71" width="129" height="47"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="47" id="NHL-Si-3OH"/>
+                            <constraint firstAttribute="width" constant="129" id="neX-6J-MQa"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" name="RecordListGreen"/>
+                <constraints>
+                    <constraint firstItem="yJg-yD-SSz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="J5D-9K-njd"/>
+                    <constraint firstItem="yJg-yD-SSz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KKC-JI-spb"/>
+                    <constraint firstAttribute="trailing" secondItem="ube-Tp-lOx" secondAttribute="trailing" id="LCG-Bq-3Aw"/>
+                    <constraint firstAttribute="bottom" secondItem="ube-Tp-lOx" secondAttribute="bottom" id="P9f-m1-B5X"/>
+                    <constraint firstAttribute="trailing" secondItem="yJg-yD-SSz" secondAttribute="trailing" constant="24" id="g4O-VP-JmE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="H2p-sc-9uM" id="Kkh-js-s9E"/>
+            </connections>
+            <point key="canvasLocation" x="139.13043478260872" y="184.15178571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="imgFenceInRecordList" width="129" height="47"/>
+        <namedColor name="RecordListGreen">
+            <color red="0.73333333333333328" green="0.81960784313725488" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
