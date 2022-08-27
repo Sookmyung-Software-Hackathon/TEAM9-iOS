@@ -44,6 +44,7 @@ extension RecordListViewController {
     private func goToQuestionListViewController() {
         guard let questionListViewController = UIStoryboard(name: Const.Storyboard.QuestionList, bundle: nil)
             .instantiateViewController(withIdentifier: Const.ViewController.QuestionListViewController) as? QuestionListViewController else { return }
+        questionListViewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(questionListViewController, animated: true)
     }
     

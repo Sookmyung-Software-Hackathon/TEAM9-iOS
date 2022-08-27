@@ -15,6 +15,8 @@ final class RecordListTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         setUI()
+        
+        self.selectedBackgroundView = UIView()
     }
     
     override func layoutSubviews() {

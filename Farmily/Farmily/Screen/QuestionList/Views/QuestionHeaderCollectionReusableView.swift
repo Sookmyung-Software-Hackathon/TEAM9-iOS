@@ -17,16 +17,13 @@ final class QuestionHeaderCollectionReusableView: UICollectionReusableView {
         $0.font = .systemFont(ofSize: 15, weight: .semibold)
     }
     
-    private let subtitleLabel = UILabel().then {
-        $0.text = "zz"
-    }
-    
     // MARK: - init
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        setLayout()
     }
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -38,11 +35,7 @@ final class QuestionHeaderCollectionReusableView: UICollectionReusableView {
         
         titleLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().inset(8)
         }
-        
-        
     }
-    
-    
-    
 }

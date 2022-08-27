@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,16 +16,82 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jj9-Ru-MmJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixn-FN-fXf">
+                                        <rect key="frame" x="8" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="4ZT-5o-yVn"/>
+                                            <constraint firstAttribute="width" constant="44" id="bxl-6G-j8K"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="icBack"/>
+                                        <connections>
+                                            <action selector="backButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nUF-an-fSo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Y6S-pW-MDB"/>
+                                    <constraint firstItem="Ixn-FN-fXf" firstAttribute="centerY" secondItem="jj9-Ru-MmJ" secondAttribute="centerY" id="eyY-P8-l41"/>
+                                    <constraint firstItem="Ixn-FN-fXf" firstAttribute="leading" secondItem="jj9-Ru-MmJ" secondAttribute="leading" constant="8" id="vvX-09-MhH"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PeT-8U-0OB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="joo-mu-1S0">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="225"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rkt-lv-cry">
+                                            <rect key="frame" x="0.0" y="185" width="414" height="40"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="ROZ-tw-feZ"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" name="DetailHeaderBlue"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="rkt-lv-cry" secondAttribute="bottom" id="3FL-ZR-86p"/>
+                                        <constraint firstAttribute="trailing" secondItem="rkt-lv-cry" secondAttribute="trailing" id="Nkq-bK-ccm"/>
+                                        <constraint firstItem="rkt-lv-cry" firstAttribute="leading" secondItem="joo-mu-1S0" secondAttribute="leading" id="xSx-2q-3eo"/>
+                                    </constraints>
+                                </view>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jj9-Ru-MmJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="9Xa-gJ-AS7"/>
+                            <constraint firstItem="PeT-8U-0OB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ekj-Yv-AIa"/>
+                            <constraint firstItem="jj9-Ru-MmJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="GFs-k1-0Py"/>
+                            <constraint firstAttribute="trailing" secondItem="PeT-8U-0OB" secondAttribute="trailing" id="NLB-e2-Yxq"/>
+                            <constraint firstAttribute="bottom" secondItem="PeT-8U-0OB" secondAttribute="bottom" id="PUa-u8-6TQ"/>
+                            <constraint firstAttribute="trailing" secondItem="jj9-Ru-MmJ" secondAttribute="trailing" id="eeB-gR-cnw"/>
+                            <constraint firstItem="PeT-8U-0OB" firstAttribute="top" secondItem="jj9-Ru-MmJ" secondAttribute="bottom" id="ezx-eC-jr1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="headerBottomWhiteView" destination="rkt-lv-cry" id="n77-xm-Pzj"/>
+                        <outlet property="headerView" destination="joo-mu-1S0" id="zZB-V4-Btl"/>
+                        <outlet property="tableView" destination="PeT-8U-0OB" id="xaD-bg-z5Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="35"/>
+            <point key="canvasLocation" x="24.637681159420293" y="34.821428571428569"/>
         </scene>
     </scenes>
     <resources>
+        <image name="icBack" width="44" height="44"/>
+        <namedColor name="DetailHeaderBlue">
+            <color red="0.82352941176470584" green="0.88627450980392153" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
