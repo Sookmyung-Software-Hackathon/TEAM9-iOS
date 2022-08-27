@@ -10,4 +10,9 @@ import Foundation
 struct URLConstant {
     
     static let baseURL = ""
+    
+    static let family = "/family"
+    static let familyJoin = "/family/join"
+    static let question = "/question"
+    static let photo = "/photo"
 }

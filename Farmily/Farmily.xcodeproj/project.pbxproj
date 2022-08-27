@@ -42,6 +42,9 @@
 		152F57D128BA023700CA3245 /* BaseTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57D028BA023700CA3245 /* BaseTargetType.swift */; };
 		152F57D328BA3EA200CA3245 /* URLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57D228BA3EA200CA3245 /* URLConstant.swift */; };
 		152F57D528BA3EEE00CA3245 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57D428BA3EEE00CA3245 /* UIViewController+.swift */; };
+		152F57D728BA3FD000CA3245 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57D628BA3FD000CA3245 /* UIColor+.swift */; };
+		152F57DC28BA41C800CA3245 /* FamilyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57DB28BA41C800CA3245 /* FamilyRouter.swift */; };
+		152F57DE28BA41CE00CA3245 /* QuestionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57DD28BA41CE00CA3245 /* QuestionRouter.swift */; };
 		8580EAC81110D1650A787330 /* Pods_Farmily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7325699031C30C791E1365AA /* Pods_Farmily.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +87,9 @@
 		152F57D028BA023700CA3245 /* BaseTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTargetType.swift; sourceTree = "<group>"; };
 		152F57D228BA3EA200CA3245 /* URLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstant.swift; sourceTree = "<group>"; };
 		152F57D428BA3EEE00CA3245 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		152F57D628BA3FD000CA3245 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		152F57DB28BA41C800CA3245 /* FamilyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyRouter.swift; sourceTree = "<group>"; };
+		152F57DD28BA41CE00CA3245 /* QuestionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRouter.swift; sourceTree = "<group>"; };
 		66742D996FC244F628203A2A /* Pods-Farmily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmily.debug.xcconfig"; path = "Target Support Files/Pods-Farmily/Pods-Farmily.debug.xcconfig"; sourceTree = "<group>"; };
 		7325699031C30C791E1365AA /* Pods_Farmily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -170,6 +176,7 @@
 		152F578B28B9F63700CA3245 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				152F57D828BA419900CA3245 /* API */,
 				152F579A28B9FB6600CA3245 /* BaseResponse */,
 				152F579028B9F6D600CA3245 /* Supports */,
 			);
@@ -216,6 +223,7 @@
 				152F579628B9FA4200CA3245 /* UIView+.swift */,
 				152F579828B9FA8100CA3245 /* Observable+catchError.swift */,
 				152F57D428BA3EEE00CA3245 /* UIViewController+.swift */,
+				152F57D628BA3FD000CA3245 /* UIColor+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,6 +304,31 @@
 				152F57CE28BA010600CA3245 /* Image.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		152F57D828BA419900CA3245 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				152F57DA28BA41BA00CA3245 /* QuestionAPI */,
+				152F57D928BA41A100CA3245 /* FamilyAPI */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		152F57D928BA41A100CA3245 /* FamilyAPI */ = {
+			isa = PBXGroup;
+			children = (
+				152F57DB28BA41C800CA3245 /* FamilyRouter.swift */,
+			);
+			path = FamilyAPI;
+			sourceTree = "<group>";
+		};
+		152F57DA28BA41BA00CA3245 /* QuestionAPI */ = {
+			isa = PBXGroup;
+			children = (
+				152F57DD28BA41CE00CA3245 /* QuestionRouter.swift */,
+			);
+			path = QuestionAPI;
 			sourceTree = "<group>";
 		};
 		ED32BE85D96D4ABF548659D6 /* Frameworks */ = {
@@ -439,17 +472,20 @@
 				152F579728B9FA4200CA3245 /* UIView+.swift in Sources */,
 				152F57A228B9FBB200CA3245 /* BaseResponseType.swift in Sources */,
 				152F579228B9F82C00CA3245 /* MoyaLoggingPlugin.swift in Sources */,
+				152F57DC28BA41C800CA3245 /* FamilyRouter.swift in Sources */,
 				152F57D128BA023700CA3245 /* BaseTargetType.swift in Sources */,
 				152F579928B9FA8100CA3245 /* Observable+catchError.swift in Sources */,
 				152F577528B9F43100CA3245 /* AppDelegate.swift in Sources */,
 				152F579528B9F87300CA3245 /* UIImageView+.swift in Sources */,
 				152F57B528B9FE5A00CA3245 /* MyPageViewController.swift in Sources */,
+				152F57D728BA3FD000CA3245 /* UIColor+.swift in Sources */,
 				152F57A428B9FBC800CA3245 /* BaseArrayResponseType.swift in Sources */,
 				152F577728B9F43100CA3245 /* SceneDelegate.swift in Sources */,
 				152F57AB28B9FDD200CA3245 /* HomeViewController.swift in Sources */,
 				152F57C928BA003800CA3245 /* Storyboard.swift in Sources */,
 				152F579E28B9FB8F00CA3245 /* VoidType.swift in Sources */,
 				152F57D528BA3EEE00CA3245 /* UIViewController+.swift in Sources */,
+				152F57DE28BA41CE00CA3245 /* QuestionRouter.swift in Sources */,
 				152F57CB28BA003D00CA3245 /* ViewController.swift in Sources */,
 				152F57BA28B9FF5600CA3245 /* InitialViewController.swift in Sources */,
 				152F57BF28B9FFF200CA3245 /* QuestionListViewController.swift in Sources */,
