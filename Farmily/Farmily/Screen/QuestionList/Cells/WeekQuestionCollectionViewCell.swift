@@ -28,7 +28,8 @@ final class WeekQuestionCollectionViewCell: UICollectionViewCell {
         addSubviews([bgView])
         
         bgView.snp.makeConstraints {
-            $0.top.leading.bottom.trailing.equalToSuperview().inset(4)
+            $0.top.bottom.equalToSuperview().inset(4)
+            $0.leading.trailing.equalToSuperview().inset(8)
         }
     }
 
