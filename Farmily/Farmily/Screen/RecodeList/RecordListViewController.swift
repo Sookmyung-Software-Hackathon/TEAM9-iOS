@@ -23,8 +23,14 @@ final class RecordListViewController: UIViewController {
         super.viewDidLoad()
         
         setTableView()
-        getMaxWeek()
+        
         addFamilyQuestionButton.cornerRadius = 30
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getMaxWeek()
     }
     
     private func setTableView() {

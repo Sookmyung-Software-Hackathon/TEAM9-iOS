@@ -31,7 +31,7 @@
                                     <constraint firstAttribute="width" secondItem="nq0-FN-73z" secondAttribute="height" multiplier="295:263" id="snD-Uh-347"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번주 어쩌구" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ur-hL-cxC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ur-hL-cxC">
                                 <rect key="frame" x="63" y="196" width="256" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="19L-Eq-cuJ"/>
