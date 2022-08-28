@@ -94,6 +94,15 @@ Server : [https://github.com/Sookmyung-Software-Hackathon/TEAM9-SERVER](https://
 - 가족에 대해 궁금했던 점을 물어보거나, 과거의 추억을 회상하게하는 질문, 가족에 대한 퀴즈, 가족과 새로운 추억을 쌓을 수 있도록 제안
 - 질문들에 답변을 하면서 가족끼리의 유대감을 기르고, 더 나아가 가족 구성원 뿐만 아니라, 대화가 단절된 소규모 집단으로까지 타겟층을 확장하여 더 많은 사람들의 화합을 기대
 
+## 페이지 구성 및 구현 뷰 UI
+
+<img width="795" alt="image" src="https://user-images.githubusercontent.com/68391767/187066746-af9f932b-118c-4048-9b05-2591e0c8d95f.png">
+
+<img width="794" alt="image" src="https://user-images.githubusercontent.com/68391767/187066754-da3d3f8c-a0bb-46c7-9f50-0a589bd50afc.png">
+
+<img width="793" alt="image" src="https://user-images.githubusercontent.com/68391767/187066769-ca28489b-f677-4329-97e1-bc0eb22d5c09.png">
+
+<img width="788" alt="image" src="https://user-images.githubusercontent.com/68391767/187066777-0b3668a5-782b-4e79-aff9-8ba66bfd8571.png">
 
 
 
