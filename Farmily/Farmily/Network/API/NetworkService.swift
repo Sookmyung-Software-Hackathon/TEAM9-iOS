@@ -14,4 +14,5 @@ final class NetworkService {
     
     let family: FamilyService = DefaultFamilyService()
     let question: QuestionService = DefaultQuestionService()
+    let photo: PhotoService = DefaultPhotoService()
 }

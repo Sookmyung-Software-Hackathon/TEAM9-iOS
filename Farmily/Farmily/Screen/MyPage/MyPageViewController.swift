@@ -9,6 +9,7 @@ import UIKit
 
 import SnapKit
 import Then
+import RxSwift
 
 final class ImageCollectionCell: UICollectionViewCell {
     
@@ -42,18 +43,31 @@ final class ImageCollectionCell: UICollectionViewCell {
 
 final class MyPageViewController: UIViewController {
     
-    var photos: [String]?
-
+    var photos: [FamilyPhoto]?
+    private let disposeBag = DisposeBag()
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        getPhoto()
         setCollectionView()
     }
     
-    
+}
 
+extension MyPageViewController {
+    
+    private func getPhoto() {
+        NetworkService.shared.photo.getPhoto()
+            .compactMap { $0.data }
+            .bind { data in
+                self.photos = data
+                self.collectionView.reloadData()
+            }
+            .disposed(by: disposeBag)
+    }
 }
 
 extension MyPageViewController {
@@ -86,12 +100,14 @@ extension MyPageViewController {
 
 extension MyPageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return photos?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionCell.identifier, for: indexPath) as? ImageCollectionCell else { return UICollectionViewCell() }
-        cell.setData(image: "https://sopt-seminar.s3.ap-northeast-2.amazonaws.com/1661664028408_defautlt.png")
+        if let photos = photos {
+            cell.setData(image: photos[indexPath.item].url)
+        }
         return cell
     }
     
