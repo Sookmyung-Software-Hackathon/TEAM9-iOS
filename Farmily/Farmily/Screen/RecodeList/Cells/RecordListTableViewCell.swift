@@ -9,6 +9,7 @@ import UIKit
 
 final class RecordListTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bgView: UIView!
     
     override func awakeFromNib() {
@@ -23,6 +24,10 @@ final class RecordListTableViewCell: UITableViewCell {
         super.layoutSubviews()
 
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 12.0, left: 16, bottom: 0, right: 16))
+    }
+    
+    func setData(week: Int) {
+        titleLabel.text = "\(week)번째 울타리 >"
     }
     
     private func setUI() {

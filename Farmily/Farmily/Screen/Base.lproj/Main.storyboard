@@ -9,7 +9,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="9aN-vr-1Uw">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2gX-c8-Dpl" customClass="MainTabBarController" customModule="Farmily" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="2gX-c8-Dpl" customClass="MainTabBarController" customModule="Farmily" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y7r-lb-tz5">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

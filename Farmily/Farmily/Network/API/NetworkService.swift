@@ -13,4 +13,5 @@ final class NetworkService {
     private init() { }
     
     let family: FamilyService = DefaultFamilyService()
+    let question: QuestionService = DefaultQuestionService()
 }

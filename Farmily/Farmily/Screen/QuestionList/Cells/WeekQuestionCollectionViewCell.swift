@@ -16,6 +16,13 @@ final class WeekQuestionCollectionViewCell: UICollectionViewCell {
         $0.backgroundColor = .RecordListGreen37
         $0.cornerRadius = 18
     }
+    
+    private let questionLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 15, weight: .regular)
+        $0.textColor = .black
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,10 +34,20 @@ final class WeekQuestionCollectionViewCell: UICollectionViewCell {
         
         addSubviews([bgView])
         
+        bgView.addSubviews([questionLabel])
+        
         bgView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(4)
             $0.leading.trailing.equalToSuperview().inset(8)
         }
+        
+        questionLabel.snp.makeConstraints {
+            $0.top.leading.bottom.trailing.equalToSuperview().inset(8)
+        }
+    }
+    
+    func setData(question: Question) {
+        questionLabel.text = question.question
     }
 
 }

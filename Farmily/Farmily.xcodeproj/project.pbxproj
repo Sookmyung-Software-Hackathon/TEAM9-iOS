@@ -61,6 +61,9 @@
 		152F580128BAF97800CA3245 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F580028BAF97800CA3245 /* Encodable+.swift */; };
 		152F580328BAFDBE00CA3245 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F580228BAFDBE00CA3245 /* Family.swift */; };
 		152F580528BAFE4000CA3245 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F580428BAFE4000CA3245 /* User.swift */; };
+		152F580728BB019400CA3245 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F580628BB019400CA3245 /* UserDefaultsKey.swift */; };
+		152F580928BB02D400CA3245 /* RootChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F580828BB02D400CA3245 /* RootChange.swift */; };
+		152F580B28BB062E00CA3245 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F580A28BB062E00CA3245 /* Question.swift */; };
 		8580EAC81110D1650A787330 /* Pods_Farmily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7325699031C30C791E1365AA /* Pods_Farmily.framework */; };
 		F21F606828BA88D600E73B3E /* AnswerQuestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21F606728BA88D600E73B3E /* AnswerQuestion.storyboard */; };
 		F21F606A28BA88E600E73B3E /* AnswerQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21F606928BA88E600E73B3E /* AnswerQuestionViewController.swift */; };
@@ -124,6 +127,9 @@
 		152F580028BAF97800CA3245 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		152F580228BAFDBE00CA3245 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		152F580428BAFE4000CA3245 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		152F580628BB019400CA3245 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		152F580828BB02D400CA3245 /* RootChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootChange.swift; sourceTree = "<group>"; };
+		152F580A28BB062E00CA3245 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		66742D996FC244F628203A2A /* Pods-Farmily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmily.debug.xcconfig"; path = "Target Support Files/Pods-Farmily/Pods-Farmily.debug.xcconfig"; sourceTree = "<group>"; };
 		7325699031C30C791E1365AA /* Pods_Farmily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21F606728BA88D600E73B3E /* AnswerQuestion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnswerQuestion.storyboard; sourceTree = "<group>"; };
@@ -197,6 +203,7 @@
 			children = (
 				152F577428B9F43100CA3245 /* AppDelegate.swift */,
 				152F577628B9F43100CA3245 /* SceneDelegate.swift */,
+				152F580828BB02D400CA3245 /* RootChange.swift */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -346,6 +353,7 @@
 				152F57CA28BA003D00CA3245 /* ViewController.swift */,
 				152F57CC28BA00DF00CA3245 /* Identifier.swift */,
 				152F57CE28BA010600CA3245 /* Image.swift */,
+				152F580628BB019400CA3245 /* UserDefaultsKey.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -420,6 +428,7 @@
 			children = (
 				152F580228BAFDBE00CA3245 /* Family.swift */,
 				152F580428BAFE4000CA3245 /* User.swift */,
+				152F580A28BB062E00CA3245 /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -579,10 +588,12 @@
 				152F57FF28BAF73A00CA3245 /* NetworkService.swift in Sources */,
 				152F580328BAFDBE00CA3245 /* Family.swift in Sources */,
 				152F57CD28BA00DF00CA3245 /* Identifier.swift in Sources */,
+				152F580728BB019400CA3245 /* UserDefaultsKey.swift in Sources */,
 				152F57C428BA001000CA3245 /* QuestionDetailViewController.swift in Sources */,
 				152F57E728BA5AA300CA3245 /* EmptyTableViewCell.swift in Sources */,
 				152F57A628B9FD7700CA3245 /* MainTabBarController.swift in Sources */,
 				152F579728B9FA4200CA3245 /* UIView+.swift in Sources */,
+				152F580928BB02D400CA3245 /* RootChange.swift in Sources */,
 				152F57A228B9FBB200CA3245 /* BaseResponseType.swift in Sources */,
 				152F57EE28BA652500CA3245 /* WeekPhotoCollectionViewCell.swift in Sources */,
 				152F57F628BA6CF800CA3245 /* QuestionHeaderCollectionReusableView.swift in Sources */,
@@ -595,6 +606,7 @@
 				152F57B528B9FE5A00CA3245 /* MyPageViewController.swift in Sources */,
 				152F57EA28BA619500CA3245 /* RecordHeaderView.swift in Sources */,
 				152F57D728BA3FD000CA3245 /* UIColor+.swift in Sources */,
+				152F580B28BB062E00CA3245 /* Question.swift in Sources */,
 				152F57A428B9FBC800CA3245 /* BaseArrayResponseType.swift in Sources */,
 				152F577728B9F43100CA3245 /* SceneDelegate.swift in Sources */,
 				152F57AB28B9FDD200CA3245 /* HomeViewController.swift in Sources */,

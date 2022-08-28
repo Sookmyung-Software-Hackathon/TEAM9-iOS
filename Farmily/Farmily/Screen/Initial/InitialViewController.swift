@@ -77,6 +77,18 @@ extension InitialViewController {
         
         let okAction = UIAlertAction(title: "확인", style: .default, handler: { _ in
             /// 통신
+            NetworkService.shared.family.postFamilyJoin(joinRequest: FamilyJoinRequest(device: UIDevice.current.identifierForVendor!.uuidString, code: alertViewController.textFields?[0].text ?? "nil"))
+                .filter { $0.statusCase == .okay }
+                .compactMap { $0.data }
+                .bind { data in
+                    UserDefaults.standard.set(
+                        data.accessToken,
+                        forKey: Const.UserDefaultsKey.accessToken)
+                    RootChange.shared.update(.mainTab)
+                }
+                .disposed(by: self.disposeBag)
+            
+            print(UIDevice.current.identifierForVendor!.uuidString)
             print(alertViewController.textFields?[0].text ?? "nil")
         })
         alertViewController.addAction(okAction)
