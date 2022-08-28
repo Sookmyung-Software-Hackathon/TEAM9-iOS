@@ -40,6 +40,14 @@ final class RecordListViewController: UIViewController {
                            forCellReuseIdentifier: Const.Identifier.RecordListTableViewCell)
         tableView.register(EmptyTableViewCell.self, forCellReuseIdentifier: "EmptyTableViewCell")
     }
+    
+    // MARK: - IBAction
+    
+    @IBAction func addFamilyQuestionButtonDidTap(_ sender: Any) {
+        makeFamilyQuestionTextFieldRequestAlert {
+           
+        }
+    }
 }
 
 // MARK: - Network
@@ -129,5 +137,51 @@ extension RecordListViewController: UITableViewDataSource {
         default:
             return UITableViewCell()
         }
+    }
+}
+
+// MARK: - Extension (Alert)
+
+extension RecordListViewController {
+    
+    /// 가족 질문 추가
+    func makeFamilyQuestionTextFieldRequestAlert(completion : (() -> Void)? = nil)
+    {
+        
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+        
+        let alertViewController = UIAlertController(title: "질문입력",
+                                                    message: "가족에게 질문할 내용을 적어주세요",
+                                                    preferredStyle: .alert)
+        
+        alertViewController.addTextField { (textField) in
+            textField.placeholder = "질문을 입력하세요"
+        }
+        
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: { _ in
+            /// 통신
+            NetworkService.shared.question.postFamilyQuestionAdd(question: FamilyQuestionAddRequest(question: alertViewController.textFields?[0].text ?? "nil"))
+                .filter { $0.statusCase == .okay }
+                .compactMap { $0.data }
+                .bind {
+                    print($0)
+                    self.showToastHasTabBAr(
+                        message: "질문이 추가되었습니다.",
+                        font: .systemFont(ofSize: 15, weight: .regular))
+                }
+                .disposed(by: self.disposeBag)
+
+            print(UIDevice.current.identifierForVendor!.uuidString)
+            print(alertViewController.textFields?[0].text ?? "nil")
+        })
+        alertViewController.addAction(okAction)
+        
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alertViewController.addAction(cancelAction)
+        
+        
+        self.present(alertViewController, animated: true, completion: completion)
     }
 }

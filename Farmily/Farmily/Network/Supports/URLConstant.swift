@@ -15,5 +15,6 @@ struct URLConstant {
     static let familyJoin = "/family/join"
     static let question = "/question"
     static let questionList = "/question/list"
+    static let questionFamily = "/question/family"
     static let photo = "/photo"
 }

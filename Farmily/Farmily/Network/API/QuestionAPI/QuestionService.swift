@@ -15,10 +15,12 @@ protocol QuestionService {
     /// 해당 주 질문 주회
     func getWeekQuestion(week: Int) -> Observable<BaseArrayResponseType<Question>>
     
-    ///
+    /// 가족 질문 추가
+    func postFamilyQuestionAdd(question: FamilyQuestionAddRequest) -> Observable<BaseResponseType<Question>>
 }
 
 final class DefaultQuestionService: QuestionService {
+    
     
     private let provider = MoyaProvider<QuestionRouter>(plugins: [MoyaLoggingPlugin()])
     
@@ -35,6 +37,14 @@ final class DefaultQuestionService: QuestionService {
             .map(BaseArrayResponseType<Question>.self)
             .catchError()
     }
+    
+    func postFamilyQuestionAdd(question: FamilyQuestionAddRequest) -> Observable<BaseResponseType<Question>> {
+        return provider.rx.request(.postFamilyQuestionAdd(question: question))
+            .asObservable()
+            .map(BaseResponseType<Question>.self)
+            .catchError()
+    }
+    
     
 }
 

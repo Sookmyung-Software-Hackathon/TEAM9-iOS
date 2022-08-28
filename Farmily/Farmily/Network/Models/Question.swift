@@ -10,10 +10,10 @@ import Foundation
 struct Question: Decodable {
     let id: Int
     let familyId: Int
-    let device: String
+    let device: String?
     let question: String
-    let weekNum: Int
-    let day: Int
+    let weekNum: Int?
+    let day: Int?
     let createdAt: String
     
 }
