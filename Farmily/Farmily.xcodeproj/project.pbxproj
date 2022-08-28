@@ -55,6 +55,10 @@
 		152F57F228BA653B00CA3245 /* WeekQuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57F028BA653B00CA3245 /* WeekQuestionCollectionViewCell.swift */; };
 		152F57F328BA653B00CA3245 /* WeekQuestionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 152F57F128BA653B00CA3245 /* WeekQuestionCollectionViewCell.xib */; };
 		152F57F628BA6CF800CA3245 /* QuestionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57F528BA6CF800CA3245 /* QuestionHeaderCollectionReusableView.swift */; };
+		152F57F928BAF71C00CA3245 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57F828BAF71C00CA3245 /* Empty.swift */; };
+		152F57FB28BAF72700CA3245 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57FA28BAF72700CA3245 /* QuestionService.swift */; };
+		152F57FD28BAF72E00CA3245 /* FamilyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57FC28BAF72E00CA3245 /* FamilyService.swift */; };
+		152F57FF28BAF73A00CA3245 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152F57FE28BAF73A00CA3245 /* NetworkService.swift */; };
 		8580EAC81110D1650A787330 /* Pods_Farmily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7325699031C30C791E1365AA /* Pods_Farmily.framework */; };
 		F21F606828BA88D600E73B3E /* AnswerQuestion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21F606728BA88D600E73B3E /* AnswerQuestion.storyboard */; };
 		F21F606A28BA88E600E73B3E /* AnswerQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21F606928BA88E600E73B3E /* AnswerQuestionViewController.swift */; };
@@ -112,6 +116,10 @@
 		152F57F028BA653B00CA3245 /* WeekQuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekQuestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		152F57F128BA653B00CA3245 /* WeekQuestionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekQuestionCollectionViewCell.xib; sourceTree = "<group>"; };
 		152F57F528BA6CF800CA3245 /* QuestionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		152F57F828BAF71C00CA3245 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
+		152F57FA28BAF72700CA3245 /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
+		152F57FC28BAF72E00CA3245 /* FamilyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyService.swift; sourceTree = "<group>"; };
+		152F57FE28BAF73A00CA3245 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		66742D996FC244F628203A2A /* Pods-Farmily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Farmily.debug.xcconfig"; path = "Target Support Files/Pods-Farmily/Pods-Farmily.debug.xcconfig"; sourceTree = "<group>"; };
 		7325699031C30C791E1365AA /* Pods_Farmily.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Farmily.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21F606728BA88D600E73B3E /* AnswerQuestion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnswerQuestion.storyboard; sourceTree = "<group>"; };
@@ -201,6 +209,7 @@
 		152F578B28B9F63700CA3245 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				152F57F728BAF71300CA3245 /* Models */,
 				152F57D828BA419900CA3245 /* API */,
 				152F579A28B9FB6600CA3245 /* BaseResponse */,
 				152F579028B9F6D600CA3245 /* Supports */,
@@ -341,6 +350,7 @@
 			children = (
 				152F57DA28BA41BA00CA3245 /* QuestionAPI */,
 				152F57D928BA41A100CA3245 /* FamilyAPI */,
+				152F57FE28BAF73A00CA3245 /* NetworkService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -349,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				152F57DB28BA41C800CA3245 /* FamilyRouter.swift */,
+				152F57FC28BAF72E00CA3245 /* FamilyService.swift */,
 			);
 			path = FamilyAPI;
 			sourceTree = "<group>";
@@ -357,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				152F57DD28BA41CE00CA3245 /* QuestionRouter.swift */,
+				152F57FA28BAF72700CA3245 /* QuestionService.swift */,
 			);
 			path = QuestionAPI;
 			sourceTree = "<group>";
@@ -396,6 +408,14 @@
 				152F57F528BA6CF800CA3245 /* QuestionHeaderCollectionReusableView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		152F57F728BAF71300CA3245 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				152F57F828BAF71C00CA3245 /* Empty.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ED32BE85D96D4ABF548659D6 /* Frameworks */ = {
@@ -546,10 +566,12 @@
 				152F57F228BA653B00CA3245 /* WeekQuestionCollectionViewCell.swift in Sources */,
 				152F57CF28BA010600CA3245 /* Image.swift in Sources */,
 				F21F606A28BA88E600E73B3E /* AnswerQuestionViewController.swift in Sources */,
+				152F57F928BAF71C00CA3245 /* Empty.swift in Sources */,
 				152F57D328BA3EA200CA3245 /* URLConstant.swift in Sources */,
 				152F57E428BA510000CA3245 /* RecordListTableViewCell.swift in Sources */,
 				152F57B028B9FE3E00CA3245 /* RecordListViewController.swift in Sources */,
 				152F57A028B9FBA200CA3245 /* StatusCase.swift in Sources */,
+				152F57FF28BAF73A00CA3245 /* NetworkService.swift in Sources */,
 				152F57CD28BA00DF00CA3245 /* Identifier.swift in Sources */,
 				152F57C428BA001000CA3245 /* QuestionDetailViewController.swift in Sources */,
 				152F57E728BA5AA300CA3245 /* EmptyTableViewCell.swift in Sources */,
@@ -572,11 +594,13 @@
 				152F57AB28B9FDD200CA3245 /* HomeViewController.swift in Sources */,
 				152F57C928BA003800CA3245 /* Storyboard.swift in Sources */,
 				152F579E28B9FB8F00CA3245 /* VoidType.swift in Sources */,
+				152F57FD28BAF72E00CA3245 /* FamilyService.swift in Sources */,
 				152F57D528BA3EEE00CA3245 /* UIViewController+.swift in Sources */,
 				152F57DE28BA41CE00CA3245 /* QuestionRouter.swift in Sources */,
 				152F57CB28BA003D00CA3245 /* ViewController.swift in Sources */,
 				152F57BA28B9FF5600CA3245 /* InitialViewController.swift in Sources */,
 				152F57BF28B9FFF200CA3245 /* QuestionListViewController.swift in Sources */,
+				152F57FB28BAF72700CA3245 /* QuestionService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
