@@ -17,10 +17,14 @@ protocol QuestionService {
     
     /// 가족 질문 추가
     func postFamilyQuestionAdd(question: FamilyQuestionAddRequest) -> Observable<BaseResponseType<Question>>
+    
+    /// 해당 주에 사진 추가
+    func postPhoto(familyPhoto: PostFamilyPhotoRequest) -> Observable<BaseResponseType<FamilyPhoto>>
+    
 }
 
 final class DefaultQuestionService: QuestionService {
-    
+   
     
     private let provider = MoyaProvider<QuestionRouter>(plugins: [MoyaLoggingPlugin()])
     
@@ -45,7 +49,12 @@ final class DefaultQuestionService: QuestionService {
             .catchError()
     }
     
-    
+    func postPhoto(familyPhoto: PostFamilyPhotoRequest) -> Observable<BaseResponseType<FamilyPhoto>> {
+        return provider.rx.request(.postPhoto(familyPhoto: familyPhoto))
+            .asObservable()
+            .map(BaseResponseType<FamilyPhoto>.self)
+            .catchError()
+    }
 }
 
 

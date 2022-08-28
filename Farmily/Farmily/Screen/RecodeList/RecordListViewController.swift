@@ -16,6 +16,7 @@ final class RecordListViewController: UIViewController {
     var maxWeek: Int = 0
     private let disposeBag = DisposeBag()
     
+    @IBOutlet weak var addFamilyQuestionButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ final class RecordListViewController: UIViewController {
         
         setTableView()
         getMaxWeek()
+        addFamilyQuestionButton.cornerRadius = 30
     }
     
     private func setTableView() {

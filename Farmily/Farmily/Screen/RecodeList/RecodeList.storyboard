@@ -20,14 +20,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YR-hn-Hh1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YR-hn-Hh1">
                                 <rect key="frame" x="346" y="745" width="60" height="60"/>
                                 <color key="backgroundColor" name="RecordListNavy"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="9ze-AV-Qhd"/>
                                     <constraint firstAttribute="height" constant="60" id="Ks1-ZH-McP"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="plus" catalog="system"/>
                                 <connections>
                                     <action selector="addFamilyQuestionButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3By-0S-RVr"/>
                                 </connections>
@@ -47,6 +49,7 @@
                     <navigationItem key="navigationItem" id="71M-DQ-CQ9"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addFamilyQuestionButton" destination="3YR-hn-Hh1" id="sFQ-hK-T9v"/>
                         <outlet property="tableView" destination="7ht-TR-msk" id="Ela-TQ-XJs"/>
                     </connections>
                 </viewController>
@@ -75,6 +78,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="tabBarIconFence" width="30" height="28"/>
         <namedColor name="RecordListNavy">
             <color red="0.3059999942779541" green="0.41200000047683716" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
