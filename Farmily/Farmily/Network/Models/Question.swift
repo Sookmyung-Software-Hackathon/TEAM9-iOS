@@ -15,7 +15,12 @@ struct Question: Decodable {
     let weekNum: Int?
     let day: Int?
     let createdAt: String
-    
+}
+
+struct TodayQuestion: Decodable {
+    let id: Int
+    let question: String
+    let isAnswered: Bool
 }
 
 struct QuestionMax: Decodable {

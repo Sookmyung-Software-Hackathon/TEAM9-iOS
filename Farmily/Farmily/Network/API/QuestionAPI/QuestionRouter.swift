@@ -30,7 +30,7 @@ enum QuestionRouter {
     /// 마지막 주차 조회 (DONE)
     case getQuestionLastWeek
     
-    /// 해당 주에 사진 추가
+    /// 해당 주에 사진 추가 (DONE)
     case postPhoto(familyPhoto: PostFamilyPhotoRequest)
     
     /// 해당 주 질문 조회 (DONE)
@@ -43,6 +43,8 @@ enum QuestionRouter {
 extension QuestionRouter: BaseTargetType {
     var path: String {
         switch self {
+        case .getTodayQuestion:
+            return URLConstant.question
         case .getQuestionLastWeek:
             return URLConstant.questionList
         case let .getWeekQuestion(week):
@@ -58,7 +60,7 @@ extension QuestionRouter: BaseTargetType {
     
     var method: Method {
         switch self {
-        case .getQuestionLastWeek:
+        case .getQuestionLastWeek, .getTodayQuestion:
             return .get
         case .getWeekQuestion:
             return .get
@@ -73,7 +75,7 @@ extension QuestionRouter: BaseTargetType {
     
     var task: Task {
         switch self {
-        case .getQuestionLastWeek, .getWeekQuestion:
+        case .getQuestionLastWeek, .getWeekQuestion, .getTodayQuestion:
             return .requestPlain
         case let .postFamilyQuestionAdd(question):
             return .requestParameters(parameters: question.toDictionary,

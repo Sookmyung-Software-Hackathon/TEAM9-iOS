@@ -21,6 +21,8 @@ protocol QuestionService {
     /// 해당 주에 사진 추가
     func postPhoto(familyPhoto: PostFamilyPhotoRequest) -> Observable<BaseResponseType<FamilyPhoto>>
     
+    /// 오늘 질문 조회
+    func getTodayQuestion() -> Observable<BaseResponseType<TodayQuestion>>
 }
 
 final class DefaultQuestionService: QuestionService {
@@ -55,6 +57,15 @@ final class DefaultQuestionService: QuestionService {
             .map(BaseResponseType<FamilyPhoto>.self)
             .catchError()
     }
+    
+    func getTodayQuestion() -> Observable<BaseResponseType<TodayQuestion>> {
+        return provider.rx.request(.getTodayQuestion)
+            .asObservable()
+            .map(BaseResponseType<TodayQuestion>.self)
+            .catchError()
+    }
+    
+   
 }
 
 
