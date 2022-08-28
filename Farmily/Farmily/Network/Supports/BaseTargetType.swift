@@ -18,7 +18,8 @@ extension BaseTargetType {
     }
 
     var headers: [String: String]? {
-        return ["Content-Type": "application/json"]
+        return ["Content-Type": "application/json",
+                "Authorization": UserDefaults.standard.value(forKey: Const.UserDefaultsKey.accessToken) as? String ?? "" ]
     }
 
     var sampleData: Data {
