@@ -26,7 +26,7 @@ enum QuestionRouter {
     /// 오늘의 질문 조회 (DONE)
     case getTodayQuestion
     
-    /// 오늘의 질문에 답변
+    /// 오늘의 질문에 답변 (DONE)
     case postAnswerTodayQuestion(answer: PostTodayAnswer)
     
     /// 가족 질문 추가 (DONE)
@@ -42,7 +42,7 @@ enum QuestionRouter {
     case getWeekQuestion(week: Int)
     
     /// 해당 주차 요일 답변 조회
-    case getDayAnswer
+    case getDayAnswer(week: Int, day: Int) 
 }
 
 extension QuestionRouter: BaseTargetType {
@@ -60,14 +60,15 @@ extension QuestionRouter: BaseTargetType {
             return URLConstant.questionFamily
         case let .postPhoto(familyPhoto):
             return URLConstant.questionList + "/\(familyPhoto.week)"
-        default:
-            return ""
+        case let .getDayAnswer(week, day):
+            return URLConstant.questionList + "/\(week)/\(day)"
+
         }
     }
     
     var method: Method {
         switch self {
-        case .getQuestionLastWeek, .getTodayQuestion:
+        case .getQuestionLastWeek, .getTodayQuestion, .getDayAnswer:
             return .get
         case .getWeekQuestion:
             return .get
@@ -75,14 +76,12 @@ extension QuestionRouter: BaseTargetType {
             return .post
         case .postPhoto:
             return .post
-        default:
-            return .get
         }
     }
     
     var task: Task {
         switch self {
-        case .getQuestionLastWeek, .getWeekQuestion, .getTodayQuestion:
+        case .getQuestionLastWeek, .getWeekQuestion, .getTodayQuestion, .getDayAnswer:
             return .requestPlain
         case let .postFamilyQuestionAdd(question):
             return .requestParameters(parameters: question.toDictionary,

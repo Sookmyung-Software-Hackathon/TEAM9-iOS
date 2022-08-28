@@ -65,7 +65,8 @@ final class QuestionListViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     var weekIdx: Int?
-    var questions: [Question] = []
+    var photoWithQuestion: QuestionWithPhoto?
+    //var questions: [Question] = []
     var photo: UIImage?
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -95,7 +96,7 @@ extension QuestionListViewController {
         NetworkService.shared.question.getWeekQuestion(week: week)
             .compactMap { $0.data }
             .bind { data in
-                self.questions = data
+                self.photoWithQuestion = data
                 self.collectionView.reloadData()
             }
             .disposed(by: disposeBag)
@@ -106,9 +107,15 @@ extension QuestionListViewController {
 
 extension QuestionListViewController {
     
-    private func goToQuestionDetailViewController() {
+    private func goToQuestionDetailViewController(day: Int, questionText: String) {
         guard let detailViewController = UIStoryboard(name: Const.Storyboard.QuestionDetail, bundle: nil)
             .instantiateViewController(withIdentifier: Const.ViewController.QuestionDetailViewController) as? QuestionDetailViewController else { return }
+        
+        if let weekIdx = weekIdx {
+            detailViewController.week = weekIdx
+            detailViewController.day = day
+        }
+        detailViewController.questionText = questionText
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
@@ -199,7 +206,8 @@ extension QuestionListViewController: UICollectionViewDelegate {
                 self.present(imagePicker, animated: true)
             }
         case 1:
-            goToQuestionDetailViewController()
+            goToQuestionDetailViewController(day: indexPath.item,
+                                             questionText: photoWithQuestion?.question[indexPath.item].question ?? "")
         default:
             print("zz")
         }
@@ -217,7 +225,7 @@ extension QuestionListViewController: UICollectionViewDataSource {
         case 0:
             return 1
         case 1:
-            return questions.count
+            return photoWithQuestion?.question.count ?? 0
         default:
             return 0
         }
@@ -227,11 +235,18 @@ extension QuestionListViewController: UICollectionViewDataSource {
         switch indexPath.section {
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuestionTopCollectionViewCell", for: indexPath) as? QuestionTopCollectionViewCell else { return UICollectionViewCell() }
+            cell.setData(
+                hasImage: ((photo != nil) || (photoWithQuestion?.photo != nil)),
+                image: photo,
+                imageURL: photoWithQuestion?.photo
+            )
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Identifier.WeekQuestionCollectionViewCell, for: indexPath) as? WeekQuestionCollectionViewCell
             else { return UICollectionViewCell() }
-            cell.setData(question: questions[indexPath.row])
+            if let photoWithQuestion = photoWithQuestion {
+                cell.setData(question: photoWithQuestion.question[indexPath.row])
+            }
             return cell
         default:
             return UICollectionViewCell()
