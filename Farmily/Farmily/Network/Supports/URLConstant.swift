@@ -9,7 +9,7 @@ import Foundation
 
 struct URLConstant {
     
-    static let baseURL = ""
+    static let baseURL = "http://3.39.194.248:8000"
     
     static let family = "/family"
     static let familyJoin = "/family/join"

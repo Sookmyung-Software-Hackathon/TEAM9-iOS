@@ -7,7 +7,12 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
+
 final class InitialViewController: UIViewController {
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - IBOutlet
 
@@ -34,10 +39,17 @@ final class InitialViewController: UIViewController {
     
     @IBAction func newFarmilyButtonDidTap(_ sender: Any) {
         
-        self.makeOKAlert(title: "가족 코드가 복사되었습니다.",
-                         message: "코드: D3LEk9", okAction: { _ in
-            print("화면전환")
-        }, completion: nil)
+        
+        NetworkService.shared.family.postFamily()
+            .filter { $0.statusCase == .okay }
+            .compactMap { $0.data }
+            .bind { data in
+                self.makeOKAlert(title: "가족 코드가 복사되었습니다.",
+                                 message: "코드: \(data.code)", okAction: { _ in
+                    UIPasteboard.general.string = data.code
+                }, completion: nil)
+            }
+            .disposed(by: disposeBag)
     }
     
     @IBAction func joinFarmilyButtonDidTap(_ sender: Any) {

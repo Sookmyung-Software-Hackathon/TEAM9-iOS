@@ -10,7 +10,7 @@ import RxSwift
 
 protocol FamilyService {
     func postFamily() -> Observable<BaseResponseType<Family>>
-    func postFamilyJoin(joinRequest: FamilyJoinRequest) -> Observable<BaseResponseType<VoidType>>
+    func postFamilyJoin(joinRequest: FamilyJoinRequest) -> Observable<BaseResponseType<FamilyJoin>>
 }
 
 final class DefaultFamilyService: FamilyService {
@@ -24,10 +24,10 @@ final class DefaultFamilyService: FamilyService {
             .catchError()
     }
     
-    func postFamilyJoin(joinRequest: FamilyJoinRequest) -> Observable<BaseResponseType<VoidType>> {
+    func postFamilyJoin(joinRequest: FamilyJoinRequest) -> Observable<BaseResponseType<FamilyJoin>> {
         return provider.rx.request(.postFamilyJoin(joinRequest: joinRequest))
             .asObservable()
-            .map(BaseResponseType<VoidType>.self)
+            .map(BaseResponseType<FamilyJoin>.self)
             .catchError()
     }
 }
