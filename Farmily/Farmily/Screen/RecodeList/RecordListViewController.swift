@@ -32,6 +32,7 @@ final class RecordListViewController: UIViewController {
         if #available(iOS 15, *) {
             tableView.sectionHeaderTopPadding = 0
         }
+        tableView.automaticallyAdjustsScrollIndicatorInsets = false
         registerXib()
         tableView.delegate = self
         tableView.dataSource = self
@@ -99,7 +100,7 @@ extension RecordListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 1:
-            return 100
+            return 130
         default:
             return 0
         }
