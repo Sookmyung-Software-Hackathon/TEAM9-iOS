@@ -13,7 +13,7 @@ protocol QuestionService {
     func getQuestionLastWeekMaxInt() -> Observable<BaseResponseType<QuestionMax>>
     
     /// 해당 주 질문 주회
-    func getWeekQuestion(week: Int) -> Observable<BaseArrayResponseType<Question>>
+    func getWeekQuestion(week: Int) -> Observable<BaseResponseType<QuestionWithPhoto>>
     
     /// 가족 질문 추가
     func postFamilyQuestionAdd(question: FamilyQuestionAddRequest) -> Observable<BaseResponseType<Question>>
@@ -26,6 +26,9 @@ protocol QuestionService {
     
     /// 오늘 질문에 답변
     func postAnswerTodayQuestion(todayAnswer: PostTodayAnswer) -> Observable<BaseResponseType<TodayQuestionAnswer>>
+    
+    /// 해당 주차 요일 답변 조회
+    func getDayAnswer(week: Int, day: Int) -> Observable<BaseArrayResponseType<Question>>
 }
 
 final class DefaultQuestionService: QuestionService {
@@ -40,10 +43,10 @@ final class DefaultQuestionService: QuestionService {
             .catchError()
     }
     
-    func getWeekQuestion(week: Int) -> Observable<BaseArrayResponseType<Question>> {
+    func getWeekQuestion(week: Int) -> Observable<BaseResponseType<QuestionWithPhoto>> {
         return provider.rx.request(.getWeekQuestion(week: week))
             .asObservable()
-            .map(BaseArrayResponseType<Question>.self)
+            .map(BaseResponseType<QuestionWithPhoto>.self)
             .catchError()
     }
     
@@ -75,7 +78,13 @@ final class DefaultQuestionService: QuestionService {
             .catchError()
     }
     
-   
+    func getDayAnswer(week: Int, day: Int) -> Observable<BaseArrayResponseType<Question>> {
+        return provider.rx.request(.getDayAnswer(week: week, day: day))
+            .asObservable()
+            .map(BaseArrayResponseType<Question>.self)
+            .catchError()
+    }
+    
    
 }
 

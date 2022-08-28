@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct QuestionWithPhoto: Decodable {
+    let photo: String?
+    let question: [Question]
+}
+
 struct Question: Decodable {
     let id: Int
     let familyId: Int
@@ -15,6 +20,9 @@ struct Question: Decodable {
     let weekNum: Int?
     let day: Int?
     let createdAt: String
+    let weekId: Int?
+    let answer: String?
+    let userId: Int?
 }
 
 struct TodayQuestion: Decodable {

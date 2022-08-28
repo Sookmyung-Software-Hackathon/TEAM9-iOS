@@ -9,11 +9,12 @@ import UIKit
 
 import SnapKit
 import Then
+import RxSwift
 
 final class QuestionContentTableViewCell: UITableViewCell {
     
     private let contentsLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 13, weight: .regular)
+        $0.font = .systemFont(ofSize: 15, weight: .regular)
         $0.numberOfLines = 0
     }
     
@@ -32,22 +33,36 @@ final class QuestionContentTableViewCell: UITableViewCell {
         addSubviews([contentsLabel])
         
         contentsLabel.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.top.bottom.equalToSuperview().inset(8)
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.top.bottom.equalToSuperview().inset(16)
             $0.height.lessThanOrEqualTo(20).priority(.low)
         }
+    }
+    
+    func setData(content: String) {
+        contentsLabel.text = content
     }
 }
 
 final class QuestionDetailViewController: UIViewController {
+    
+    var week: Int?
+    var day: Int?
+    var questionText: String?
 
+    var question: [Question]?
+    
+    private let disposeBag = DisposeBag()
+    
+    @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerBottomWhiteView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        getAnswers()
         setTableView()
     }
     
@@ -56,12 +71,33 @@ final class QuestionDetailViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableHeaderView = headerView
+        if let questionText = questionText {
+            questionLabel.text = questionText
+        }
         
         headerBottomWhiteView.roundCorners(cornerRadius: 16, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
     }
     
     @IBAction func backButtonDidTap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+// MARK: - Extension
+
+extension QuestionDetailViewController {
+    
+    private func getAnswers() {
+        if let week = week, let day = day {
+            NetworkService.shared.question.getDayAnswer(week: week, day: day)
+                .compactMap { $0.data }
+                .bind { data in
+                    print(data)
+                    self.question = data
+                    self.tableView.reloadData()
+                }
+                .disposed(by: disposeBag)
+        }
     }
 }
 
@@ -80,11 +116,14 @@ extension QuestionDetailViewController: UITableViewDelegate {
 
 extension QuestionDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return question?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionContentTableViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionContentTableViewCell", for: indexPath) as? QuestionContentTableViewCell else { return UITableViewCell() }
+        if let question = question {
+            cell.setData(content: question[indexPath.row].answer ?? "")
+        }
         return cell
     }
     

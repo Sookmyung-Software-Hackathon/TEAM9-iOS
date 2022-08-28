@@ -105,6 +105,7 @@
                     <connections>
                         <outlet property="headerBottomWhiteView" destination="rkt-lv-cry" id="n77-xm-Pzj"/>
                         <outlet property="headerView" destination="joo-mu-1S0" id="zZB-V4-Btl"/>
+                        <outlet property="questionLabel" destination="5hd-0V-NgW" id="Yqy-SV-E7L"/>
                         <outlet property="tableView" destination="PeT-8U-0OB" id="xaD-bg-z5Z"/>
                     </connections>
                 </viewController>
