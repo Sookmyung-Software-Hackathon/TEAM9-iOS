@@ -47,7 +47,22 @@ final class InitialViewController: UIViewController {
                 self.makeOKAlert(title: "가족 코드가 복사되었습니다.",
                                  message: "코드: \(data.code)", okAction: { _ in
                     UIPasteboard.general.string = data.code
-                }, completion: nil)
+                    
+                    NetworkService.shared.family.postFamilyJoin(joinRequest: FamilyJoinRequest(device: UIDevice.current.identifierForVendor!.uuidString, code: data.code))
+                        .filter { $0.statusCase == .okay }
+                        .compactMap { $0.data }
+                        .bind { data in
+                            UserDefaults.standard.set(
+                                data.accessToken,
+                                forKey: Const.UserDefaultsKey.accessToken)
+                            RootChange.shared.update(.mainTab)
+                        }
+                        .disposed(by: self.disposeBag)
+                }, completion: {
+                    
+                   
+                    
+                })
             }
             .disposed(by: disposeBag)
     }

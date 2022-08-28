@@ -13,8 +13,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+//
+//        UserDefaults.standard.set("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxMX0sImlhdCI6MTY2MTY2MjkzNCwiZXhwIjozNzY2MTY2MjkzNH0.ZK968Y-B3QNZ8kG7R7Ttr7I3XOv9-SS3vUHe1cF_W0Y", forKey: Const.UserDefaultsKey.accessToken)
         
-        UserDefaults.standard.set("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxMX0sImlhdCI6MTY2MTY2MjkzNCwiZXhwIjozNzY2MTY2MjkzNH0.ZK968Y-B3QNZ8kG7R7Ttr7I3XOv9-SS3vUHe1cF_W0Y", forKey: Const.UserDefaultsKey.accessToken)
+        if let token = UserDefaults.standard.value(forKey: Const.UserDefaultsKey.accessToken) {
+            print(token)
+            RootChange.shared.update(.mainTab)
+        } else {
+            RootChange.shared.update(.initial)
+        }
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
