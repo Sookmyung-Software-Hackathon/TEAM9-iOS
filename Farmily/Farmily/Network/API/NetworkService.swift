@@ -11,4 +11,6 @@ final class NetworkService {
     static let shared = NetworkService()
 
     private init() { }
+    
+    let family: FamilyService = DefaultFamilyService()
 }
