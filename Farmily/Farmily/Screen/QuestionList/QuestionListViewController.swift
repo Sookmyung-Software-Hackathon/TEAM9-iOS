@@ -11,7 +11,6 @@ import SnapKit
 import Then
 import RxSwift
 
-import UIKit
 public class ScaleAspectFitImageView : UIImageView {
     
     public override var intrinsicContentSize: CGSize {
@@ -63,6 +62,8 @@ final class QuestionTopCollectionViewCell: UICollectionViewCell {
             
             else if let imageURL = imageURL {
                 photoImageView.image(url: imageURL)
+                
+                photoImageView.sizeToFit()
             }
         } else {
             photoImageView.isHidden = true
