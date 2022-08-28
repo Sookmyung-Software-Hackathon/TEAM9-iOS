@@ -3,6 +3,7 @@
 질문으로 가족과의 유대감을 기르는 서비스, FARM:ily
 
 <img width="701" alt="image" src="https://user-images.githubusercontent.com/68391767/187066434-5fc34af4-a14f-44da-8f51-24d7d1af6adc.png">
+<br><br>
 
 ## TEAM
 
@@ -15,6 +16,7 @@
 Client : [https://github.com/Sookmyung-Software-Hackathon/TEAM9-iOS](https://github.com/Sookmyung-Software-Hackathon/TEAM9-iOS)
 
 Server : [https://github.com/Sookmyung-Software-Hackathon/TEAM9-SERVER](https://github.com/Sookmyung-Software-Hackathon/TEAM9-SERVER)
+<br><br>
 
 ## 👩🏻‍🌾 서비스 개요 
 
@@ -23,6 +25,7 @@ Server : [https://github.com/Sookmyung-Software-Hackathon/TEAM9-SERVER](https://
 가족들과의 대화단절 사회속에 살고 있는 우리에게 [가족과 함께 존재하고, 한 덩어리로 서로 연결되어 있으며, 화목하게 어울리는 방법]이 필요하지 않을까요?
 
 **질문으로 가족과의 유대감을 기르는 서비스, FARM: ily** 입니다.
+<br><br>
 
 ### 서비스명 및 브랜딩 의미
 
@@ -31,10 +34,12 @@ Server : [https://github.com/Sookmyung-Software-Hackathon/TEAM9-SERVER](https://
 > 
 > 가족이라는 울타리 속에서 다양한 생명체들이 어울어져 지낸다는 의미를 가진 FARM:ily입니다.
 >
+<br><br>
 
 ### 서비스명 및 브랜딩 의미
 
 > 질문으로 가족과의 유대감을 기르는 서비스, FARM: ily
+<br><br>
 
 ### 앱 로고 및 스플래시 로고
 
@@ -49,11 +54,13 @@ Server : [https://github.com/Sookmyung-Software-Hackathon/TEAM9-SERVER](https://
 > 
 > 동화 내용 처럼 “알고보니 미운 오리 새끼는 오리가 아닌 백조의 새끼인 것이었다" 이처럼 자식과 부모님의 새로운 모습을 보고 우리의 고정관념과는 다른 아름다운 모습을 보기를 바라는 의미에서 스플래시 로고를 그리게 되었습니다.
 >
+<br><br>
 
 ### 핵심 타겟층
 
 > 화합이 필요한 가족 공동체, 가족 구성원들에 대해 잘 모르는 사람들, 가족과 화합과 공존을 이루고픈 사람들
 >
+<br><br>
 
 ## 👩🏻‍🌾  서비스 목적 및 기획 배경
 
@@ -64,6 +71,7 @@ Server : [https://github.com/Sookmyung-Software-Hackathon/TEAM9-SERVER](https://
 사춘기 자녀들도, 궁금하게 많지만 직접 물어보기 힘든 부모님들에게도 편하고 재밌게 서로에게 다가갈 수 있는 방법을 생각해봤습니다. 서로에게 직접 궁금했던 질문을 하거나, 서로에 대해 잘 알 수 있는 일상 질문들을 통해 서로에 대해 더 알아가보자 생각했습니다.
 
 쉽게 자주 접근할 수 있고, 푸시 알림과 가족 그룹 초대과 같은 앱에 특화된 기능을 위해서 모바일 기반으로 제작되어야 한다고 생각했기에 iOS앱 서비스를 기획하게 되었습니다.
+<br><br>
 
 ## 핵심 기술 및 주요기능
 
@@ -71,6 +79,7 @@ Server : [https://github.com/Sookmyung-Software-Hackathon/TEAM9-SERVER](https://
 - 서버: node.js, TypeScript, PostgreSQL, Amazon EC2
 
 <img width="541" alt="image" src="https://user-images.githubusercontent.com/68391767/187066573-0588d361-ffb6-4509-95e4-29bb5f14dccd.png">
+<br><br>
 
 ## 주요기능
 
@@ -89,10 +98,16 @@ Server : [https://github.com/Sookmyung-Software-Hackathon/TEAM9-SERVER](https://
 
 <img width="743" alt="image" src="https://user-images.githubusercontent.com/68391767/187066689-b4631e68-cde5-4c4d-9625-e6509ffa8099.png">
 
+<br><br>
 ## 기대효과
 
 - 가족에 대해 궁금했던 점을 물어보거나, 과거의 추억을 회상하게하는 질문, 가족에 대한 퀴즈, 가족과 새로운 추억을 쌓을 수 있도록 제안
 - 질문들에 답변을 하면서 가족끼리의 유대감을 기르고, 더 나아가 가족 구성원 뿐만 아니라, 대화가 단절된 소규모 집단으로까지 타겟층을 확장하여 더 많은 사람들의 화합을 기대
+
+## 시연영상
+![vllo](https://user-images.githubusercontent.com/62981652/187068034-e1c1736f-51de-450d-80f5-1f1d7d018c20.gif)
+
+<br><br>
 
 ## 페이지 구성 및 구현 뷰 UI
 
