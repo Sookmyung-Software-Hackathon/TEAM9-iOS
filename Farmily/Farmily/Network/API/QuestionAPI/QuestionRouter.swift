@@ -16,13 +16,18 @@ struct PostFamilyPhotoRequest {
     let week: Int
 }
 
+struct PostTodayAnswer: Codable {
+    let id: Int
+    let answer: String
+}
+
 
 enum QuestionRouter {
-    /// 오늘의 질문 조회
+    /// 오늘의 질문 조회 (DONE)
     case getTodayQuestion
     
     /// 오늘의 질문에 답변
-    case postAnswerTodayQuestion
+    case postAnswerTodayQuestion(answer: PostTodayAnswer)
     
     /// 가족 질문 추가 (DONE)
     case postFamilyQuestionAdd(question: FamilyQuestionAddRequest)
@@ -30,7 +35,7 @@ enum QuestionRouter {
     /// 마지막 주차 조회 (DONE)
     case getQuestionLastWeek
     
-    /// 해당 주에 사진 추가
+    /// 해당 주에 사진 추가 (DONE)
     case postPhoto(familyPhoto: PostFamilyPhotoRequest)
     
     /// 해당 주 질문 조회 (DONE)
@@ -43,6 +48,10 @@ enum QuestionRouter {
 extension QuestionRouter: BaseTargetType {
     var path: String {
         switch self {
+        case .getTodayQuestion:
+            return URLConstant.question
+        case .postAnswerTodayQuestion:
+            return URLConstant.question
         case .getQuestionLastWeek:
             return URLConstant.questionList
         case let .getWeekQuestion(week):
@@ -58,11 +67,11 @@ extension QuestionRouter: BaseTargetType {
     
     var method: Method {
         switch self {
-        case .getQuestionLastWeek:
+        case .getQuestionLastWeek, .getTodayQuestion:
             return .get
         case .getWeekQuestion:
             return .get
-        case .postFamilyQuestionAdd:
+        case .postFamilyQuestionAdd, .postAnswerTodayQuestion:
             return .post
         case .postPhoto:
             return .post
@@ -73,13 +82,15 @@ extension QuestionRouter: BaseTargetType {
     
     var task: Task {
         switch self {
-        case .getQuestionLastWeek, .getWeekQuestion:
+        case .getQuestionLastWeek, .getWeekQuestion, .getTodayQuestion:
             return .requestPlain
         case let .postFamilyQuestionAdd(question):
             return .requestParameters(parameters: question.toDictionary,
                                       encoding: JSONEncoding.default)
         case let .postPhoto(familyPhoto):
             return .uploadMultipart(createMultipartFormDataList(familyPhoto))
+        case let .postAnswerTodayQuestion(answer):
+            return .requestParameters(parameters: answer.toDictionary, encoding: JSONEncoding.default)
         default:
             return .requestPlain
         }
