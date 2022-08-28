@@ -62,6 +62,17 @@ final class QuestionListViewController: UIViewController {
     }
 }
 
+// MARK: - Extension (화면전환)
+
+extension QuestionListViewController {
+    
+    private func goToQuestionDetailViewController() {
+        guard let detailViewController = UIStoryboard(name: Const.Storyboard.QuestionDetail, bundle: nil)
+            .instantiateViewController(withIdentifier: Const.ViewController.QuestionDetailViewController) as? QuestionDetailViewController else { return }
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+}
+
 // MARK: - Extension (CollectionView)
 
 extension QuestionListViewController {
@@ -70,6 +81,8 @@ extension QuestionListViewController {
         registerXib()
         collectionView.setCollectionViewLayout(createLayout(), animated: true)
         collectionView.dataSource = self
+        collectionView.delegate = self
+        
     }
     
     private func registerXib() {
@@ -129,6 +142,13 @@ extension QuestionListViewController {
         
         return section
         
+    }
+}
+
+extension QuestionListViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        goToQuestionDetailViewController()
     }
 }
 
