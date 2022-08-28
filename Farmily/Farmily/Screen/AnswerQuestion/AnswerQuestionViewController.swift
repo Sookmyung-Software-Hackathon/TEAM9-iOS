@@ -24,6 +24,10 @@ class AnswerQuestionViewController: UIViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let question = question {
+            self.questionLabel.text = question.question
+        }
 		setUI()
 		setAnswerTextView()
     }
@@ -55,6 +59,7 @@ class AnswerQuestionViewController: UIViewController {
             NetworkService.shared.question.postAnswerTodayQuestion(todayAnswer: PostTodayAnswer(id: question.id, answer: answerTextView.text))
                 .compactMap { $0.data }
                 .bind {
+                   
                     self.makeOKAlert(title: nil, message: "답변 완료 되었습니다.") { _ in
                         self.dismiss(animated: true)
                     }
