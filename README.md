@@ -72,5 +72,28 @@ Server : [https://github.com/Sookmyung-Software-Hackathon/TEAM9-SERVER](https://
 
 <img width="541" alt="image" src="https://user-images.githubusercontent.com/68391767/187066573-0588d361-ffb6-4509-95e4-29bb5f14dccd.png">
 
+## 주요기능
+
+<img width="714" alt="image" src="https://user-images.githubusercontent.com/68391767/187066621-10068fe5-2275-49d4-8fdd-36ce284aa89e.png">
+
+<img width="745" alt="image" src="https://user-images.githubusercontent.com/68391767/187066635-4afa4a4a-3c7b-457d-8828-918ce6e6444a.png">
+
+<img width="764" alt="image" src="https://user-images.githubusercontent.com/68391767/187066646-afea7cac-d7fc-46d8-9f4f-26f8f678ec5e.png">
+
+
+<img width="714" alt="image" src="https://user-images.githubusercontent.com/68391767/187066621-10068fe5-2275-49d4-8fdd-36ce284aa89e.png">
+
+<img width="745" alt="image" src="https://user-images.githubusercontent.com/68391767/187066660-5109c445-c2fa-44aa-80e5-2f3d407d1348.png">
+
+<img width="743" alt="image" src="https://user-images.githubusercontent.com/68391767/187066670-0bf2c916-5977-4a02-bbd9-04c337e3c22d.png">
+
+<img width="743" alt="image" src="https://user-images.githubusercontent.com/68391767/187066689-b4631e68-cde5-4c4d-9625-e6509ffa8099.png">
+
+## 기대효과
+
+- 가족에 대해 궁금했던 점을 물어보거나, 과거의 추억을 회상하게하는 질문, 가족에 대한 퀴즈, 가족과 새로운 추억을 쌓을 수 있도록 제안
+- 질문들에 답변을 하면서 가족끼리의 유대감을 기르고, 더 나아가 가족 구성원 뿐만 아니라, 대화가 단절된 소규모 집단으로까지 타겟층을 확장하여 더 많은 사람들의 화합을 기대
+
+
 
 
