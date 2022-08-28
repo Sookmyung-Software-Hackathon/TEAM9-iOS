@@ -77,7 +77,7 @@ extension InitialViewController {
         
         let okAction = UIAlertAction(title: "확인", style: .default, handler: { _ in
             /// 통신
-            NetworkService.shared.family.postFamilyJoin(joinRequest: FamilyJoinRequest(device: "zzdd", code: alertViewController.textFields?[0].text ?? "nil"))
+            NetworkService.shared.family.postFamilyJoin(joinRequest: FamilyJoinRequest(device: UIDevice.current.identifierForVendor!.uuidString, code: alertViewController.textFields?[0].text ?? "nil"))
                 .filter { $0.statusCase == .okay }
                 .compactMap { $0.data }
                 .bind { data in
