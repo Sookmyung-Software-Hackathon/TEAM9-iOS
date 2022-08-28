@@ -95,7 +95,4 @@ extension MyPageViewController: UICollectionViewDataSource {
         return cell
     }
     
-    
-    
-    
 }

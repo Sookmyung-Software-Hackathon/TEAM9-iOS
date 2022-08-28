@@ -14,4 +14,5 @@ struct FamilyPhoto: Decodable {
     let week: Int
     let familyId: Int
     let createdAt: String
+    let device: String?
 }
