@@ -111,13 +111,15 @@ Server : [https://github.com/Sookmyung-Software-Hackathon/TEAM9-SERVER](https://
 
 ## 페이지 구성 및 구현 뷰 UI
 
-<img width="795" alt="image" src="https://user-images.githubusercontent.com/68391767/187066746-af9f932b-118c-4048-9b05-2591e0c8d95f.png">
+<img width="784" alt="image" src="https://user-images.githubusercontent.com/68391767/187072384-c308605f-d281-430f-be6b-9f840c687417.png">
 
-<img width="794" alt="image" src="https://user-images.githubusercontent.com/68391767/187066754-da3d3f8c-a0bb-46c7-9f50-0a589bd50afc.png">
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/68391767/187072393-a559d6f4-4290-440d-8128-03998d0e7d6a.png">
 
-<img width="793" alt="image" src="https://user-images.githubusercontent.com/68391767/187066769-ca28489b-f677-4329-97e1-bc0eb22d5c09.png">
+<img width="821" alt="image" src="https://user-images.githubusercontent.com/68391767/187072400-f9423636-3c19-48f4-9820-02bba4017786.png">
 
-<img width="788" alt="image" src="https://user-images.githubusercontent.com/68391767/187066777-0b3668a5-782b-4e79-aff9-8ba66bfd8571.png">
+<img width="835" alt="image" src="https://user-images.githubusercontent.com/68391767/187072409-c64c1fb4-a956-46b9-9527-0adffd83a367.png">
+
+<img width="791" alt="image" src="https://user-images.githubusercontent.com/68391767/187072416-b3f078de-8164-4871-9262-bd071ac8de82.png">
 
 
 
