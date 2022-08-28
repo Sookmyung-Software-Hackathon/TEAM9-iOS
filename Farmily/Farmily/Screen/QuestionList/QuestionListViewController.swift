@@ -32,6 +32,18 @@ final class QuestionTopCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setData(hasImage: Bool, image: UIImage? = nil, imageURL: String? = nil) {
+        if hasImage {
+            if let image = image {
+                photoImageView.image = image
+            }
+            
+            else if let imageURL = imageURL {
+                photoImageView.image(url: imageURL)
+            }
+        }
+    }
+    
     private func setLayout() {
         addSubviews([addPhotoImageView, photoImageView])
         
@@ -54,6 +66,7 @@ final class QuestionListViewController: UIViewController {
     
     var weekIdx: Int?
     var questions: [Question] = []
+    var photo: UIImage?
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var navigationTitleLabel: UILabel!
@@ -175,7 +188,22 @@ extension QuestionListViewController {
 extension QuestionListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        goToQuestionDetailViewController()
+        switch indexPath.section {
+        case 0:
+            if let photo = photo {
+                
+            }
+            else {
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                self.present(imagePicker, animated: true)
+            }
+        case 1:
+            goToQuestionDetailViewController()
+        default:
+            print("zz")
+        }
+        
     }
 }
 
@@ -198,7 +226,7 @@ extension QuestionListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuestionTopCollectionViewCell", for: indexPath)
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuestionTopCollectionViewCell", for: indexPath) as? QuestionTopCollectionViewCell else { return UICollectionViewCell() }
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Identifier.WeekQuestionCollectionViewCell, for: indexPath) as? WeekQuestionCollectionViewCell
@@ -224,4 +252,25 @@ extension QuestionListViewController: UICollectionViewDataSource {
         }
         
     }
+}
+
+extension QuestionListViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.photo = image
+            if let weekIdx = weekIdx {
+                NetworkService.shared.question.postPhoto(
+                    familyPhoto: PostFamilyPhotoRequest(file: image, week: weekIdx))
+                .compactMap { $0.data }
+                .bind { _ in
+                    self.collectionView.reloadData()
+                    self.dismiss(animated: true, completion: nil)
+                }
+                .disposed(by: disposeBag)
+            }
+        }
+    }
+    
+    
 }
