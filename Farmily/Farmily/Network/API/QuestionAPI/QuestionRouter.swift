@@ -22,7 +22,7 @@ enum QuestionRouter {
     case postPhoto
     
     /// 해당 주 질문 조회
-    case getWeekQuestion
+    case getWeekQuestion(week: Int)
     
     /// 해당 주차 요일 답변 조회
     case getDayAnswer
@@ -33,6 +33,8 @@ extension QuestionRouter: BaseTargetType {
         switch self {
         case .getQuestionLastWeek:
             return URLConstant.questionList
+        case let .getWeekQuestion(week):
+            return URLConstant.questionList + "/\(week)"
         default:
             return ""
         }
@@ -42,6 +44,9 @@ extension QuestionRouter: BaseTargetType {
         switch self {
         case .getQuestionLastWeek:
             return .get
+        case .getWeekQuestion:
+            return .get
+            
         default:
             return .get
         }
@@ -49,7 +54,7 @@ extension QuestionRouter: BaseTargetType {
     
     var task: Task {
         switch self {
-        case .getQuestionLastWeek:
+        case .getQuestionLastWeek, .getWeekQuestion:
             return .requestPlain
         default:
             return .requestPlain

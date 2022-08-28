@@ -61,10 +61,11 @@ extension RecordListViewController {
 
 extension RecordListViewController {
     
-    private func goToQuestionListViewController() {
+    private func goToQuestionListViewController(week: Int) {
         guard let questionListViewController = UIStoryboard(name: Const.Storyboard.QuestionList, bundle: nil)
             .instantiateViewController(withIdentifier: Const.ViewController.QuestionListViewController) as? QuestionListViewController else { return }
         questionListViewController.hidesBottomBarWhenPushed = true
+        questionListViewController.weekIdx = week
         self.navigationController?.pushViewController(questionListViewController, animated: true)
     }
     
@@ -75,7 +76,7 @@ extension RecordListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 1:
-            goToQuestionListViewController()
+            goToQuestionListViewController(week: indexPath.row + 1)
         default:
             print("zz")
         }

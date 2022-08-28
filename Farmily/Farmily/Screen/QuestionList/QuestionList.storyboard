@@ -73,6 +73,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="86j-PE-8j4" id="Ehg-Nd-pRT"/>
+                        <outlet property="navigationTitleLabel" destination="3hA-ld-rJn" id="Bnk-2H-65I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

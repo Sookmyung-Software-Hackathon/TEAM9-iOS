@@ -38,4 +38,8 @@ final class QuestionHeaderCollectionReusableView: UICollectionReusableView {
             $0.leading.equalToSuperview().inset(8)
         }
     }
+    
+    func setData(week: Int) {
+        titleLabel.text = "\(week)주차엔 어떤 질문들이 있었나요? "
+    }
 }

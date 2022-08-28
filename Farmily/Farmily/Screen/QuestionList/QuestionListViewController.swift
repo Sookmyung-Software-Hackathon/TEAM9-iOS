@@ -9,6 +9,7 @@ import UIKit
 
 import SnapKit
 import Then
+import RxSwift
 
 final class QuestionTopCollectionViewCell: UICollectionViewCell {
     
@@ -49,12 +50,23 @@ final class QuestionTopCollectionViewCell: UICollectionViewCell {
 
 final class QuestionListViewController: UIViewController {
     
+    private let disposeBag = DisposeBag()
+    
+    var weekIdx: Int?
+    var questions: [Question] = []
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var navigationTitleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setCollectionView()
+        
+        if let weekIdx = weekIdx {
+            navigationTitleLabel.text = "\(weekIdx)주차 울타리"
+            getWeekQuestion(week: weekIdx)
+        }
     }
     
     @IBAction func backButtonDidTap(_ sender: Any) {
@@ -63,6 +75,19 @@ final class QuestionListViewController: UIViewController {
 }
 
 // MARK: - Network
+
+extension QuestionListViewController {
+    
+    private func getWeekQuestion(week: Int) {
+        NetworkService.shared.question.getWeekQuestion(week: week)
+            .compactMap { $0.data }
+            .bind { data in
+                self.questions = data
+                self.collectionView.reloadData()
+            }
+            .disposed(by: disposeBag)
+    }
+}
 
 // MARK: - Extension (화면전환)
 
@@ -164,7 +189,7 @@ extension QuestionListViewController: UICollectionViewDataSource {
         case 0:
             return 1
         case 1:
-            return 10
+            return questions.count
         default:
             return 0
         }
@@ -178,6 +203,7 @@ extension QuestionListViewController: UICollectionViewDataSource {
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Identifier.WeekQuestionCollectionViewCell, for: indexPath) as? WeekQuestionCollectionViewCell
             else { return UICollectionViewCell() }
+            cell.setData(question: questions[indexPath.row])
             return cell
         default:
             return UICollectionViewCell()
@@ -187,7 +213,11 @@ extension QuestionListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch indexPath.section {
         case 1:
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Const.Identifier.QuestionHeaderCollectionReusableView, for: indexPath)
+            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: Const.Identifier.QuestionHeaderCollectionReusableView, for: indexPath) as? QuestionHeaderCollectionReusableView else { return UICollectionReusableView() }
+            if let weekIdx = weekIdx {
+                view.setData(week: weekIdx)
+            }
+            
             return view
         default:
             return UICollectionReusableView()
