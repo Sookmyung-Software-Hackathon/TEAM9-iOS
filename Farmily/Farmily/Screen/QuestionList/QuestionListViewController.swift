@@ -11,15 +11,35 @@ import SnapKit
 import Then
 import RxSwift
 
+import UIKit
+public class ScaleAspectFitImageView : UIImageView {
+    
+    public override var intrinsicContentSize: CGSize {
+          if let myImage = self.image {
+              let myImageWidth = myImage.size.width
+              let myImageHeight = myImage.size.height
+              let myViewWidth = self.frame.size.width
+
+              let ratio = myViewWidth/myImageWidth
+              let scaledHeight = myImageHeight * ratio
+
+              return CGSize(width: myViewWidth, height: scaledHeight)
+          }
+          return CGSize(width: -1.0, height: -1.0)
+      }
+}
+
 final class QuestionTopCollectionViewCell: UICollectionViewCell {
     
     private let addPhotoImageView = UIImageView().then {
         $0.image = Const.Image.btnAddPhoto
         $0.contentMode = .scaleAspectFit
+        $0.isHidden = true
     }
     
-    private let photoImageView = UIImageView().then {
-        $0.image = UIImage()
+    private let photoImageView = ScaleAspectFitImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.isHidden = true
     }
     
     override init(frame: CGRect) {
@@ -33,7 +53,10 @@ final class QuestionTopCollectionViewCell: UICollectionViewCell {
     }
     
     func setData(hasImage: Bool, image: UIImage? = nil, imageURL: String? = nil) {
+        print("hasImage", hasImage)
         if hasImage {
+            addPhotoImageView.isHidden = true
+            photoImageView.isHidden = false
             if let image = image {
                 photoImageView.image = image
             }
@@ -41,6 +64,9 @@ final class QuestionTopCollectionViewCell: UICollectionViewCell {
             else if let imageURL = imageURL {
                 photoImageView.image(url: imageURL)
             }
+        } else {
+            photoImageView.isHidden = true
+            addPhotoImageView.isHidden = false
         }
     }
     
@@ -49,12 +75,13 @@ final class QuestionTopCollectionViewCell: UICollectionViewCell {
         
         addPhotoImageView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(16)
+            $0.height.equalTo(92)
             $0.leading.trailing.equalToSuperview().inset(8)
         }
         
         photoImageView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(16)
-            $0.height.lessThanOrEqualTo(200).priority(.medium)
+            $0.height.greaterThanOrEqualTo(200).priority(.low)
             $0.leading.trailing.equalToSuperview().inset(8)
         }
     }
@@ -66,7 +93,6 @@ final class QuestionListViewController: UIViewController {
     
     var weekIdx: Int?
     var photoWithQuestion: QuestionWithPhoto?
-    //var questions: [Question] = []
     var photo: UIImage?
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -75,7 +101,7 @@ final class QuestionListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setCollectionView()
+       // setCollectionView()
         
         if let weekIdx = weekIdx {
             navigationTitleLabel.text = "\(weekIdx)주차 울타리"
@@ -97,7 +123,8 @@ extension QuestionListViewController {
             .compactMap { $0.data }
             .bind { data in
                 self.photoWithQuestion = data
-                self.collectionView.reloadData()
+                self.setCollectionView()
+       
             }
             .disposed(by: disposeBag)
     }
@@ -197,14 +224,10 @@ extension QuestionListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            if let photo = photo {
-                
-            }
-            else {
+
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
                 self.present(imagePicker, animated: true)
-            }
         case 1:
             goToQuestionDetailViewController(day: indexPath.item,
                                              questionText: photoWithQuestion?.question[indexPath.item].question ?? "")
