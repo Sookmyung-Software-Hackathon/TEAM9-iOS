@@ -23,6 +23,9 @@ protocol QuestionService {
     
     /// 오늘 질문 조회
     func getTodayQuestion() -> Observable<BaseResponseType<TodayQuestion>>
+    
+    /// 오늘 질문에 답변
+    func postAnswerTodayQuestion(todayAnswer: PostTodayAnswer) -> Observable<BaseResponseType<TodayQuestionAnswer>>
 }
 
 final class DefaultQuestionService: QuestionService {
@@ -65,6 +68,14 @@ final class DefaultQuestionService: QuestionService {
             .catchError()
     }
     
+    func postAnswerTodayQuestion(todayAnswer: PostTodayAnswer) -> Observable<BaseResponseType<TodayQuestionAnswer>> {
+        return provider.rx.request(.postAnswerTodayQuestion(answer: todayAnswer))
+            .asObservable()
+            .map(BaseResponseType<TodayQuestionAnswer>.self)
+            .catchError()
+    }
+    
+   
    
 }
 

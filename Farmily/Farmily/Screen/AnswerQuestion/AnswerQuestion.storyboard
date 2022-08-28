@@ -86,6 +86,9 @@
                                         <state key="normal" title="답변 끝내기">
                                             <color key="titleColor" name="InitialBackground"/>
                                         </state>
+                                        <connections>
+                                            <action selector="finishAnswerButtonDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="E4W-NI-Cz6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="InitialBlue"/>

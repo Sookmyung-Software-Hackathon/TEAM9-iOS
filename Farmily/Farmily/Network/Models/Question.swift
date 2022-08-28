@@ -23,7 +23,16 @@ struct TodayQuestion: Decodable {
     let isAnswered: Bool
 }
 
+struct TodayQuestionAnswer: Decodable {
+    let id: Int
+    let weekId: Int
+    let answer: String
+    let userId: Int
+}
+
 struct QuestionMax: Decodable {
     
     let max: Int
 }
+
+

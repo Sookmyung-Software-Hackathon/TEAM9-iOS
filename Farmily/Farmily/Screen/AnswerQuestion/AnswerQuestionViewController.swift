@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import RxSwift
 
 class AnswerQuestionViewController: UIViewController {
 
+    var question: TodayQuestion?
+    private let disposeBag = DisposeBag()
 	let textViewPlaceHolder = "이곳을 눌러서 오늘의 답변을 써주세요."
 	
 	@IBOutlet weak var questionView: UIView!
@@ -46,6 +49,21 @@ class AnswerQuestionViewController: UIViewController {
 	@objc private func didTapTextView(_ sender: Any) {
 		view.endEditing(true)
 	}
+    
+    @IBAction func finishAnswerButtonDidTap(_ sender: Any) {
+        if let question = question {
+            NetworkService.shared.question.postAnswerTodayQuestion(todayAnswer: PostTodayAnswer(id: question.id, answer: answerTextView.text))
+                .compactMap { $0.data }
+                .bind {
+                    self.makeOKAlert(title: nil, message: "답변 완료 되었습니다.") { _ in
+                        self.dismiss(animated: true)
+                    }
+                }
+                .disposed(by: disposeBag)
+        }
+        
+    }
+    
 
 }
 
