@@ -9,8 +9,12 @@ import UIKit
 
 import SnapKit
 import Then
+import RxSwift
 
 final class RecordListViewController: UIViewController {
+    
+    var maxWeek: Int = 0
+    private let disposeBag = DisposeBag()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,6 +22,7 @@ final class RecordListViewController: UIViewController {
         super.viewDidLoad()
         
         setTableView()
+        getMaxWeek()
     }
     
     private func setTableView() {
@@ -34,6 +39,21 @@ final class RecordListViewController: UIViewController {
         tableView.register(UINib(nibName: Const.Identifier.RecordListTableViewCell, bundle: nil),
                            forCellReuseIdentifier: Const.Identifier.RecordListTableViewCell)
         tableView.register(EmptyTableViewCell.self, forCellReuseIdentifier: "EmptyTableViewCell")
+    }
+}
+
+// MARK: - Network
+
+extension RecordListViewController {
+    
+    private func getMaxWeek() {
+        NetworkService.shared.question.getQuestionLastWeekMaxInt()
+            .compactMap { $0.data }
+            .bind { data in
+                self.maxWeek = data.max
+                self.tableView.reloadData()
+            }
+            .disposed(by: disposeBag)
     }
 }
 
@@ -89,7 +109,7 @@ extension RecordListViewController: UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return 10
+            return maxWeek
         default:
             return 0
         }
@@ -103,6 +123,7 @@ extension RecordListViewController: UITableViewDataSource {
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Const.Identifier.RecordListTableViewCell, for: indexPath) as? RecordListTableViewCell else { return UITableViewCell() }
+            cell.setData(week: indexPath.row + 1)
             return cell
         default:
             return UITableViewCell()

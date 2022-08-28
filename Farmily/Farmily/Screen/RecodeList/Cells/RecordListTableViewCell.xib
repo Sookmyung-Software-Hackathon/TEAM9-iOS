@@ -43,6 +43,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bgView" destination="H2p-sc-9uM" id="Kkh-js-s9E"/>
+                <outlet property="titleLabel" destination="yJg-yD-SSz" id="f3y-1G-RrX"/>
             </connections>
             <point key="canvasLocation" x="139.13043478260872" y="184.15178571428569"/>
         </tableViewCell>
@@ -50,7 +51,7 @@
     <resources>
         <image name="imgFenceInRecordList" width="129" height="47"/>
         <namedColor name="RecordListGreen">
-            <color red="0.73333333333333328" green="0.81960784313725488" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.73299998044967651" green="0.81999999284744263" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

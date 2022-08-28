@@ -1,0 +1,18 @@
+//
+//  Question.swift
+//  Farmily
+//
+//  Created by 김혜수 on 2022/08/28.
+//
+
+import Foundation
+
+struct Question: Decodable {
+    
+    
+}
+
+struct QuestionMax: Decodable {
+    
+    let max: Int
+}
