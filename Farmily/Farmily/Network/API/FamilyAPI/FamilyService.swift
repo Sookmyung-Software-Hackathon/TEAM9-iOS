@@ -9,7 +9,7 @@ import Moya
 import RxSwift
 
 protocol FamilyService {
-    func postFamily() -> Observable<BaseResponseType<VoidType>>
+    func postFamily() -> Observable<BaseResponseType<Family>>
     func postFamilyJoin(joinRequest: FamilyJoinRequest) -> Observable<BaseResponseType<VoidType>>
 }
 
@@ -17,10 +17,10 @@ final class DefaultFamilyService: FamilyService {
     
     private let provider = MoyaProvider<FarmilyRouter>(plugins: [MoyaLoggingPlugin()])
     
-    func postFamily() -> Observable<BaseResponseType<VoidType>> {
+    func postFamily() -> Observable<BaseResponseType<Family>> {
         return provider.rx.request(.postFamily)
             .asObservable()
-            .map(BaseResponseType<VoidType>.self)
+            .map(BaseResponseType<Family>.self)
             .catchError()
     }
     
